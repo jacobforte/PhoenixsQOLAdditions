@@ -1,0 +1,3 @@
+displayName = Phoenix's QOL Additions
+author = Phoenix2496
+version = 0.1
