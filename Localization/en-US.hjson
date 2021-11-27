@@ -1,7 +1,7 @@
-﻿Mods: {
+Mods: {
 	PhoenixsQOLAdditions: {
 		ItemTooltip: {
-			InfiniteIronskinPotion: "Testing 123"
+			Tier1Buff: "{0} while in your inventory"
 		}
 	}
 }

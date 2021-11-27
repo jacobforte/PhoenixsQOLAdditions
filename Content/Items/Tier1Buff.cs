@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using System.Collections.Generic;
+using Terraria;
 using Terraria.ModLoader;
 
 namespace PhoenixsQOLAdditions.Content.Items
@@ -12,7 +13,14 @@ namespace PhoenixsQOLAdditions.Content.Items
 
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault(PhoenixsQOLAdditions.GetText("ItemTooltip", "InfiniteIronskinPotion", Lang.GetTooltip(BaseItem)));
+			var tooltip = Lang.GetTooltip(BaseItem);
+			List<string> lines = new List<string>();
+			for (int i = 0; i < tooltip.Lines; i++)
+			{
+				lines.Add(tooltip.GetLine(i));
+			}
+
+			Tooltip.SetDefault(PhoenixsQOLAdditions.GetText("ItemTooltip", "Tier1Buff", string.Join('\n', lines)));
 		}
 
 		public sealed override void SetDefaults()

@@ -26,7 +26,7 @@ namespace PhoenixsQOLAdditions
 
 		internal static string GetText(string category, string key, params object[] args)
 		{
-			return string.Format(translations[$"Mods.PhoenixsQOLAdditions.{category}.{key}"].GetTranslation(Language.ActiveCulture);, args);
+			return string.Format(translations[$"Mods.PhoenixsQOLAdditions.{category}.{key}"].GetTranslation(Language.ActiveCulture), args);
 		}
 	}
 }
