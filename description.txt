@@ -1,1 +1,1 @@
-Phoenix's QOL Additions is a pretty cool mod, it does...this. Modify this file with a description of your mod.
+Phoenix's QOL Additions adds infinite versions of all buffs and consumable items. A spiritual successor to LuiAFK.
