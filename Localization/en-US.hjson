@@ -2,6 +2,7 @@ Mods: {
 	PhoenixsQOLAdditions: {
 		ItemTooltip: {
 			Tier1Buff: "{0} while in your inventory"
+			InfiniteBasicBuffs: Combines the effects of Ironskin, Regeneration, Swiftness, and Exquisitely Stuffed buffs
 		}
 		RecipeGroup: {
 			WellFed: Any well fed food item
