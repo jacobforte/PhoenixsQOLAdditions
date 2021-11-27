@@ -3,5 +3,10 @@ Mods: {
 		ItemTooltip: {
 			Tier1Buff: "{0} while in your inventory"
 		}
+		RecipeGroup: {
+			WellFed: Any well fed food item
+			PlentySatisfied: Any plenty satisfied food item
+			ExquisitelyStuffed: Any exquisitely stuffed food item
+		}
 	}
 }

@@ -1,39 +1,37 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Terraria;
 using Terraria.ModLoader;
+using Terraria.ID;
 
 namespace PhoenixsQOLAdditions.Content.Items
 {
-	public abstract class Tier1Buff : ModItem
+	public abstract class Tier1InfiniteBuff : ModItem
 	{
 		public abstract int BaseItem { get; }
-		public abstract int BaseBuff { get; }
+		public abstract List<int> IncompatibleBuffs { get; }
 		public abstract int Value { get; }
 		public abstract void BuffEffect(Player player);
 
-		public override void SetStaticDefaults()
+		public sealed override void SetStaticDefaults()
 		{
 			var tooltip = Lang.GetTooltip(BaseItem);
-			List<string> lines = new List<string>();
-			for (int i = 0; i < tooltip.Lines; i++)
-			{
-				lines.Add(tooltip.GetLine(i));
-			}
+			string text = tooltip.GetLine(0);
 
-			Tooltip.SetDefault(PhoenixsQOLAdditions.GetText("ItemTooltip", "Tier1Buff", string.Join('\n', lines)));
+			Tooltip.SetDefault(PhoenixsQOLAdditions.GetText("ItemTooltip", "Tier1Buff", text));
 		}
 
 		public sealed override void SetDefaults()
 		{
 			Item.maxStack = 1;
 			Item.value = Value;
-			Item.rare = 2;
+			Item.rare = ItemRarityID.Green;
 		}
 
 		public sealed override void UpdateInventory(Player player)
 		{
 			base.UpdateInventory(player);
-			if (!player.HasBuff(BaseBuff))
+			if (!IncompatibleBuffs.Any(buff => player.HasBuff(buff)))
 			{
 				BuffEffect(player);
 			}
