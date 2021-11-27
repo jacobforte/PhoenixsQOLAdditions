@@ -7,13 +7,13 @@ namespace PhoenixsQOLAdditions.Content.Items
 {
 	public class InfiniteWellFed : Tier1InfiniteBuff
 	{
-		public override int BaseItem => ItemID.GoldenDelight;
+		protected override int BaseItem => ItemID.GoldenDelight;
 
-		public override List<int> IncompatibleBuffs => new List<int> { BuffID.WellFed, BuffID.WellFed2, BuffID.WellFed3 };
+		protected override List<int> IncompatibleBuffs => new List<int> { BuffID.WellFed, BuffID.WellFed2, BuffID.WellFed3 };
 
-		public override int Value => 22000;
+		protected override int Value => 22000;
 
-		public override void BuffEffect(Player player)
+		protected override void BuffEffect(Player player)
 		{
 			player.statDefense += 4;
 			player.GetCritChance(DamageClass.Generic) += 4;

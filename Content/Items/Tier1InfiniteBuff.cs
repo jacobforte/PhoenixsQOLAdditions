@@ -9,7 +9,7 @@ namespace PhoenixsQOLAdditions.Content.Items
 	public abstract class Tier1InfiniteBuff : BaseInfiniteBuffs
 	{
 		protected abstract int BaseItem { get; }
-		public abstract List<int> IncompatibleBuffs { get; }
+		protected abstract List<int> IncompatibleBuffs { get; }
 		protected sealed override int Rarity => ItemRarityID.Green;
 		protected sealed override string TooltipString => PhoenixsQOLAdditions.GetText("ItemTooltip", "Tier1Buff", Lang.GetTooltip(BaseItem).GetLine(0));
 		protected abstract void BuffEffect(Player player);

@@ -7,13 +7,13 @@ namespace PhoenixsQOLAdditions.Content.Items
 {
 	public class InfiniteIronskinPotion : Tier1InfiniteBuff
 	{
-		public override int BaseItem => ItemID.IronskinPotion;
+		protected override int BaseItem => ItemID.IronskinPotion;
 
-		public override List<int> IncompatibleBuffs => new List<int> { BuffID.Ironskin };
+		protected override List<int> IncompatibleBuffs => new List<int> { BuffID.Ironskin };
 
-		public override int Value => 5000;
+		protected override int Value => 5000;
 
-		public override void BuffEffect(Player player)
+		protected override void BuffEffect(Player player)
 		{
 			player.statDefense += 8;
 		}
