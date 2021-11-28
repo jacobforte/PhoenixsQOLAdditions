@@ -16,10 +16,11 @@ namespace PhoenixsQOLAdditions.Content.Items
 
 		public sealed override void UpdateInventory(Player player)
 		{
-			if (!IncompatibleBuffs.Any(buff => player.HasBuff(buff)))
+			foreach(var buff in IncompatibleBuffs)
 			{
-				BuffEffect(player);
+				player.buffImmune[buff] = true;
 			}
+			BuffEffect(player);
 		}
 
 		public override void AddRecipes()
