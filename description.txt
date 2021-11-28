@@ -3,14 +3,13 @@ Current features:
 1. Infinite versions of all vanilla potions, furniture buffs, environmental buffs, ale/sake.
 
 Planned features:
-1. Invis, battle, calming
 2. Teleportation, wormhole, and recall
 3. Combination crafting for all vanilla potions and arena buffs.
 4. Infinite versions of all torches and glowsticks.
 5. Infinite Healing and mana potions.
 6. Add toggles for some potions
 7. Infinite versions of flasks.
-8. Infinite versions of all ammo, arrows, consumable weapons, solutions, bombs, rope.
+8. Infinite versions of all ammo, arrows, consumable weapons, solutions, bombs, rope, stink, and love potions.
 9. Infinite fishing rods.
 10. Auto-apply buffs from piggybank/safe/defenders forge
 11. Teleportation, wormhole, and recall potions. (recall back? Not sure. Kind op.)
