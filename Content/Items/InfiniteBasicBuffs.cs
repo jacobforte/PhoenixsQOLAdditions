@@ -17,7 +17,7 @@ namespace PhoenixsQOLAdditions.Content.Items
 			dict.Add(ModContent.ItemType<InfiniteIronskinPotion>(), typeof(InfiniteIronskinPotion));
 			dict.Add(ModContent.ItemType<InfiniteRegenerationPotion>(), typeof(InfiniteRegenerationPotion));
 			dict.Add(ModContent.ItemType<InfiniteSwiftnessPotion>(), typeof(InfiniteSwiftnessPotion));
-			dict.Add(ModContent.ItemType<InfiniteWellFed>(), typeof(InfiniteWellFed));
+			dict.Add(ModContent.ItemType<InfiniteExquisitelyStuffed>(), typeof(InfiniteExquisitelyStuffed));
 			return dict;
 		}
 	}

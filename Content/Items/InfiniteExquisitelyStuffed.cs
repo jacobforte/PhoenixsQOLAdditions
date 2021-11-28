@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace PhoenixsQOLAdditions.Content.Items
 {
-	public class InfiniteWellFed : Tier1InfiniteBuff
+	public class InfiniteExquisitelyStuffed : Tier1InfiniteBuff
 	{
 		protected override int BaseItem => ItemID.GoldenDelight;
 
@@ -15,20 +15,21 @@ namespace PhoenixsQOLAdditions.Content.Items
 
 		protected override void BuffEffect(Player player)
 		{
+			player.wellFed = true;
 			player.statDefense += 4;
-			player.GetCritChance(DamageClass.Generic) += 4;
-			player.meleeSpeed += 0.1f;
+			player.GetCritChance(DamageClass.Melee) += 4;
+			player.GetCritChance(DamageClass.Ranged) += 4;
+			player.GetCritChance(DamageClass.Magic) += 4;
 			player.GetDamage(DamageClass.Generic) += 0.1f;
-			player.maxMinions += 1;
+			player.meleeSpeed += 0.1f;
+			player.minionKB += 1f;
 			player.moveSpeed += 0.4f;
-			player.pickSpeed += 0.15f;
+			player.pickSpeed -= 0.15f;
 		}
 
 		public override void AddRecipes()
 		{
 			Recipe recipe = CreateRecipe();
-			recipe.AddRecipeGroup("PhoenixsQOLAdditions:WellFed", 30);
-			recipe.AddRecipeGroup("PhoenixsQOLAdditions:PlentySatisfied", 30);
 			recipe.AddRecipeGroup("PhoenixsQOLAdditions:ExquisitelyStuffed", 30);
 			recipe.Register();
 		}
