@@ -1,1 +1,39 @@
 Phoenix's QOL Additions adds infinite versions of all buffs and consumable items. A spiritual successor to LuiAFK.
+Current features:
+1. Infinite versions of all vanilla potions, furniture buffs, environmental buffs, ale/sake.
+
+Planned features:
+1. Invis, battle, calming
+2. Teleportation, wormhole, and recall
+3. Combination crafting for all vanilla potions and arena buffs.
+4. Infinite versions of all torches and glowsticks.
+5. Infinite Healing and mana potions.
+6. Add toggles for some potions
+7. Infinite versions of flasks.
+8. Infinite versions of all ammo, arrows, consumable weapons, solutions, bombs, rope.
+9. Infinite fishing rods.
+10. Auto-apply buffs from piggybank/safe/defenders forge
+11. Teleportation, wormhole, and recall potions. (recall back? Not sure. Kind op.)
+12. Auto builders. Thin house, upsidedown house, helevator, pool builder, platform builder, rail builder.
+13. Upgraded grand design uses no actuators or wires.
+14. Improved actuation rod
+15. Mobile piggybank/safe/defenders forge/merchant
+16. Unlimited bucket and sponge
+17. Unlimited event enabler
+18. Time change
+19. Better target dummy.
+20. Super drill mount? Might not include, but it is post game so balance doesn't matter.
+
+Mod Compatibility Features. Won't implement till everything else is done. (will require max stacks plus (maybe))
+1. Any potions or flasks stacked to 30 won't be consumed. For general mod compatibility.
+2. Any torches, glowsticks, ammo, arrows, consumable weapons will be infinite at 3996.
+3. Soltions at 999.
+
+Features that won't be included:
+1. No Traveling and skeleton merchants.
+2. No plantera bulb locator.
+3. No jungle temple locator.
+4. No loot magnet.
+5. No craftable deamon/crimson alter. (use magic storage instead)
+6. No exter builder accessories? Not too op, might be convinced include.
+7. No unlimited mana accessory. Super op.

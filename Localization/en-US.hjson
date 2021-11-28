@@ -1,13 +1,28 @@
 Mods: {
 	PhoenixsQOLAdditions: {
 		ItemTooltip: {
-			Tier1Buff: "{0} while in your inventory"
+			InfiniteAmmoBox: 20% chance to not consume ammo while in your inventory
 			InfiniteBasicBuffs: Combines the effects of Ironskin, Regeneration, Swiftness, and Exquisitely Stuffed buffs
+			InfiniteBastStatue: Defense is increased by 5 while in your inventory
+			InfiniteBewitchingTable: Increased max number of minions while in your inventory
+			InfiniteCake: 20% increased movement and mining speed while in your inventory
+			InfiniteCampfire: Life regen is slightly increased while in your inventory
+			InfiniteCrystalBall: Magic powers are increased while in your inventory
+			InfiniteHeartLantern: Life regeneration is increased while in your inventory
+			InfiniteHoney: Life regeneration is increased while in your inventory
+			InfinitePeaceCandle: Decreased monster spawn rate while in your inventory
+			InfiniteSharpeningStation: Melee weapons have 12 armor penetration while in your inventory
+			InfiniteStarInABottle: Increased mana regeneration while in your inventory
+			InfiniteSunflower: Movement speed increased and monster spawns reduced
+			InfiniteTipsy: "Minor improvements to melee stats while in your inventory\n\"You're used to it\""
+			Tier1Buff: "{0} while in your inventory"
 		}
 		RecipeGroup: {
 			WellFed: Any well fed food item
 			PlentySatisfied: Any plenty satisfied food item
 			ExquisitelyStuffed: Any exquisitely stuffed food item
+			Tipsy: Any alcoholic beverage
+			Campfire: Any campfire
 		}
 	}
 }

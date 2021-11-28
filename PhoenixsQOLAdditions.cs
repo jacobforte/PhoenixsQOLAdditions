@@ -28,44 +28,6 @@ namespace PhoenixsQOLAdditions
 
 		public override void AddRecipeGroups()
 		{
-			RecipeGroup wellFedGroup = new RecipeGroup(() => GetText("RecipeGroup", "WellFed"), new int[]
-			{
-				ItemID.CookedMarshmallow,
-				ItemID.AppleJuice,
-				ItemID.BloodyMoscato,
-				ItemID.BunnyStew,
-				ItemID.CookedFish,
-				ItemID.BananaDaiquiri,
-				ItemID.FruitJuice,
-				ItemID.FruitSalad,
-				ItemID.GrilledSquirrel,
-				ItemID.Lemonade,
-				ItemID.PeachSangria,
-				ItemID.PinaColada,
-				ItemID.RoastedBird,
-				ItemID.SmoothieofDarkness,
-				ItemID.TropicalSmoothie,
-				ItemID.Teacup,
-				ItemID.SauteedFrogLegs
-			});
-			RecipeGroup.RegisterGroup("PhoenixsQOLAdditions:WellFed", wellFedGroup);
-
-			RecipeGroup plentySatisfiedGroup = new RecipeGroup(() => GetText("RecipeGroup", "PlentySatisfied"), new int[]
-			{
-				ItemID.BowlofSoup,
-				ItemID.CookedShrimp,
-				ItemID.GrubSoup,
-				ItemID.PumpkinPie,
-				ItemID.Sashimi,
-				ItemID.Escargot,
-				ItemID.LobsterTail,
-				ItemID.MonsterLasagna,
-				ItemID.PrismaticPunch,
-				ItemID.RoastedDuck,
-				ItemID.FroggleBunwich
-			});
-			RecipeGroup.RegisterGroup("PhoenixsQOLAdditions:PlentySatisfied", plentySatisfiedGroup);
-
 			RecipeGroup exquisitelyStuffedGroup = new RecipeGroup(() => GetText("RecipeGroup", "ExquisitelyStuffed"), new int[]
 			{
 				ItemID.GoldenDelight,
@@ -73,6 +35,32 @@ namespace PhoenixsQOLAdditions
 				ItemID.SeafoodDinner
 			});
 			RecipeGroup.RegisterGroup("PhoenixsQOLAdditions:ExquisitelyStuffed", exquisitelyStuffedGroup);
+
+			RecipeGroup tipsyGroup = new RecipeGroup(() => GetText("RecipeGroup", "Tipsy"), new int[]
+			{
+				ItemID.Ale,
+				ItemID.Sake
+			});
+			RecipeGroup.RegisterGroup("PhoenixsQOLAdditions:Tipsy", tipsyGroup);
+
+			RecipeGroup campfireGroup = new RecipeGroup(() => GetText("RecipeGroup", "Campfire"), new int[]
+			{
+				ItemID.BoneCampfire,
+				ItemID.Campfire,
+				ItemID.CoralCampfire,
+				ItemID.CorruptCampfire,
+				ItemID.CrimsonCampfire,
+				ItemID.CursedCampfire,
+				ItemID.DemonCampfire,
+				ItemID.DesertCampfire,
+				ItemID.FrozenCampfire,
+				ItemID.HallowedCampfire,
+				ItemID.IchorCampfire,
+				ItemID.JungleCampfire,
+				ItemID.RainbowCampfire,
+				ItemID.UltraBrightCampfire
+			});
+			RecipeGroup.RegisterGroup("PhoenixsQOLAdditions:Campfire", campfireGroup);
 		}
 
 		internal static string GetText(string category, string key, params object[] args)
