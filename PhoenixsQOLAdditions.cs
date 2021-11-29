@@ -12,6 +12,22 @@ namespace PhoenixsQOLAdditions
 {
 	public class PhoenixsQOLAdditions : Mod
 	{
+		//Properties to enable/disable any possibly undesireable buff effects.
+		public static bool DangerBuffsEnabled { get; set; } = true;
+		public static bool SpelunkerBuffEnabled { get; set; } = true;
+		public static bool FeatherFallBuffEnabled { get; set; } = true;
+		public static bool GravityBuffEnabled { get; set; } = true;
+		public static bool InvisibilityBuffEnabled { get; set; } = true;
+		public static bool InfernoVisualEnabled { get; set; } = true;
+		public static bool CrateBuffEnabled { get; set; } = true;
+		public static bool UltimateBattlerEnabled { get; set; } = false;
+		public static bool UltimatePeaceEnabled { get; set; } = false;
+
+		//Keybindings
+		public static ModKeybind ShowToggles { get; set; }
+		public static ModKeybind QuickRecall { get; set; }
+
+
 		internal static Dictionary<string, ModTranslation> translations;
 		public override Version Version => new Version(0, 0, 1);
 
@@ -24,6 +40,15 @@ namespace PhoenixsQOLAdditions
 
 			FieldInfo translationsField = typeof(LocalizationLoader).GetField("translations", BindingFlags.Static | BindingFlags.NonPublic);
 			translations = ((Dictionary<string, ModTranslation>)translationsField.GetValue(this)).Where(etc => etc.Key.StartsWith("Mods.PhoenixsQOLAdditions")).ToDictionary(mc => mc.Key, mc => mc.Value);
+
+			ShowToggles = KeybindLoader.RegisterKeybind(this, GetText("KeyBindings", "ShowToggles"), "Y");
+			QuickRecall = KeybindLoader.RegisterKeybind(this, GetText("KeyBindings", "QuickRecall"), "R");
+		}
+
+		public override void Unload()
+		{
+			ShowToggles = null;
+			QuickRecall = null;
 		}
 
 		public override void AddRecipeGroups()

@@ -11,8 +11,6 @@ namespace PhoenixsQOLAdditions.Content.Items
 
 		protected override List<int> IncompatibleBuffs => new List<int> { BuffID.WellFed, BuffID.WellFed2, BuffID.WellFed3 };
 
-		protected override int Value => 22000;
-
 		protected override void BuffEffect(Player player)
 		{
 			player.wellFed = true;

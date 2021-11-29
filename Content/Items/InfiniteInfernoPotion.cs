@@ -11,12 +11,13 @@ namespace PhoenixsQOLAdditions.Content.Items
 
 		protected override List<int> IncompatibleBuffs => new List<int> { BuffID.Inferno };
 
-		protected override int Value => 5000;
-
 		protected override void BuffEffect(Player player)
 		{
 			player.inferno = true;
-			Lighting.AddLight((int)(player.Center.X / 16f), (int)(player.Center.Y / 16f), 0.65f, 0.4f, 0.1f);
+			if (PhoenixsQOLAdditions.InfernoVisualEnabled)
+			{
+				Lighting.AddLight((int)(player.Center.X / 16f), (int)(player.Center.Y / 16f), 0.65f, 0.4f, 0.1f);
+			}
 			if (player.whoAmI != Main.myPlayer || !player.hostile)
 				return;
 

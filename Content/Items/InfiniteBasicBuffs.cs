@@ -10,7 +10,6 @@ namespace PhoenixsQOLAdditions.Content.Items
 	{
 		protected override int Rarity => ItemRarityID.Orange;
 		protected override string TooltipString => PhoenixsQOLAdditions.GetText("ItemTooltip", "InfiniteBasicBuffs");
-		protected override int Value => 30000;
 		protected override Dictionary<int, Type> GetParrentItemTypes()
 		{
 			var dict = new Dictionary<int, Type>();

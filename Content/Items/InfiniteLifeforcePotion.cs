@@ -10,8 +10,6 @@ namespace PhoenixsQOLAdditions.Content.Items
 
 		protected override List<int> IncompatibleBuffs => new List<int> { BuffID.Lifeforce };
 
-		protected override int Value => 5000;
-
 		protected override void BuffEffect(Player player)
 		{
 			player.lifeForce = true;

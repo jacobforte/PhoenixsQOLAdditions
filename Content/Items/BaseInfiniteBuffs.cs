@@ -11,7 +11,6 @@ namespace PhoenixsQOLAdditions.Content.Items
 	{
 		protected abstract int Rarity { get; }
 		protected abstract string TooltipString { get; }
-		protected abstract int Value { get; }
 
 		public sealed override void SetStaticDefaults()
 		{
@@ -21,7 +20,7 @@ namespace PhoenixsQOLAdditions.Content.Items
 		public sealed override void SetDefaults()
 		{
 			Item.maxStack = 1;
-			Item.value = Value;
+			Item.value = 0;
 			Item.rare = Rarity;
 		}
 	}

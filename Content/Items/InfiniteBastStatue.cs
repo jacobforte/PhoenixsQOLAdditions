@@ -11,8 +11,6 @@ namespace PhoenixsQOLAdditions.Content.Items
 
 		protected override string TooltipString => PhoenixsQOLAdditions.GetText("ItemTooltip", "InfiniteBastStatue");
 
-		protected override int Value => 100;
-
 		public sealed override void UpdateInventory(Player player)
 		{
 			player.buffImmune[BuffID.CatBast] = true;

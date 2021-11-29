@@ -10,8 +10,6 @@ namespace PhoenixsQOLAdditions.Content.Items
 
 		protected override List<int> IncompatibleBuffs => new List<int> { BuffID.Shine };
 
-		protected override int Value => 5000;
-
 		protected override void BuffEffect(Player player)
 		{
 			Lighting.AddLight((int)(player.position.X + (float)(player.width / 2)) / 16, (int)(player.position.Y + (float)(player.height / 2)) / 16, 0.8f, 0.95f, 1f);

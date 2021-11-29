@@ -11,8 +11,6 @@ namespace PhoenixsQOLAdditions.Content.Items
 
 		protected override string TooltipString => PhoenixsQOLAdditions.GetText("ItemTooltip", "InfiniteAmmoBox");
 
-		protected override int Value => 600;
-
 		public sealed override void UpdateInventory(Player player)
 		{
 			player.buffImmune[BuffID.AmmoBox] = true;

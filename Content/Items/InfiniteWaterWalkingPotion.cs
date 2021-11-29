@@ -10,8 +10,6 @@ namespace PhoenixsQOLAdditions.Content.Items
 
 		protected override List<int> IncompatibleBuffs => new List<int> { BuffID.WaterWalking };
 
-		protected override int Value => 5000;
-
 		protected override void BuffEffect(Player player)
 		{
 			player.waterWalk = true;

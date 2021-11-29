@@ -11,8 +11,6 @@ namespace PhoenixsQOLAdditions.Content.Items
 
 		protected override string TooltipString => PhoenixsQOLAdditions.GetText("ItemTooltip", "InfiniteCrystalBall");
 
-		protected override int Value => 5000;
-
 		public sealed override void UpdateInventory(Player player)
 		{
 			player.buffImmune[BuffID.Clairvoyance] = true;

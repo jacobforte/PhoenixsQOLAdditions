@@ -5,14 +5,11 @@ using Terraria.ModLoader;
 
 namespace PhoenixsQOLAdditions.Content.Items
 {
-	// Can't use Tier1 Buff class because we needed a custom tooltip string.
 	public class InfiniteTipsy : BaseInfiniteBuffs
 	{
 		protected override int Rarity => ItemRarityID.Green;
 
 		protected override string TooltipString => PhoenixsQOLAdditions.GetText("ItemTooltip", "InfiniteTipsy");
-
-		protected override int Value => 600;
 
 		public sealed override void UpdateInventory(Player player)
 		{
