@@ -23,5 +23,7 @@ namespace PhoenixsQOLAdditions.Content.Items
 			Item.value = 0;
 			Item.rare = Rarity;
 		}
+
+		public abstract override void AddRecipes();
 	}
 }

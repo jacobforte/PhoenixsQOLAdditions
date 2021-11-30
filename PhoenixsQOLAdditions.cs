@@ -1,3 +1,4 @@
+using PhoenixsQOLAdditions.Content.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,6 +44,9 @@ namespace PhoenixsQOLAdditions
 
 			ShowToggles = KeybindLoader.RegisterKeybind(this, GetText("KeyBindings", "ShowToggles"), "Y");
 			QuickRecall = KeybindLoader.RegisterKeybind(this, GetText("KeyBindings", "QuickRecall"), "R");
+
+			On.Terraria.Player.HasUnityPotion += (orig, player) => HasUnityPotionOverride(player);
+			On.Terraria.Player.TakeUnityPotion += (orig, player) => TakeUnityPotionOverride(player);
 		}
 
 		public override void Unload()
@@ -91,6 +95,48 @@ namespace PhoenixsQOLAdditions
 		internal static string GetText(string category, string key, params object[] args)
 		{
 			return string.Format(translations[$"Mods.PhoenixsQOLAdditions.{category}.{key}"].GetTranslation(Language.ActiveCulture), args);
+		}
+
+		private bool HasUnityPotionOverride(Player player)
+		{
+			if (player.HasItem(ModContent.ItemType<InfiniteWormholePotion>()))// || player.HasItem(ModContent.ItemType<InfiniteBuffs>()) || player.HasItem(ModContent.ItemType<InfiniteTravelBuffs>()))
+			{
+				return true;
+			}
+
+			for (int i = 0; i < 58; i++)
+			{
+				if (player.inventory[i].type == 2997 && player.inventory[i].stack > 0)
+					return true;
+			}
+
+			return false;
+		}
+
+		private void TakeUnityPotionOverride(Player player)
+		{
+			if (player.HasItem(ModContent.ItemType<InfiniteWormholePotion>()))
+			{
+				return;
+			}
+
+			int num = 0;
+			while (true)
+			{
+				if (num < 400)
+				{
+					if (player.inventory[num].type == 2997 && player.inventory[num].stack > 0)
+						break;
+
+					num++;
+					continue;
+				}
+
+				return;
+			}
+			player.inventory[num].stack--;
+			if (player.inventory[num].stack <= 0)
+				player.inventory[num].SetDefaults();
 		}
 	}
 }

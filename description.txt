@@ -36,3 +36,6 @@ Features that won't be included:
 5. No craftable deamon/crimson alter. (use magic storage instead)
 6. No exter builder accessories? Not too op, might be convinced include.
 7. No unlimited mana accessory. Super op.
+
+Compatibility:
+Overrides Player.HasUnityPotion and Player.TakeUnityPotion

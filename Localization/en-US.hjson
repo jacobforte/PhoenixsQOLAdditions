@@ -12,10 +12,11 @@ Mods: {
 			InfiniteCampfire: Life regen is slightly increased while in your inventory
 			InfiniteCombatBuffs: Thats a lot of damage
 			InfiniteCrystalBall: Magic powers are increased while in your inventory
-			InfiniteDamageBuffs: "Combines the effects of Inferno, Rage, Summoning, Thorns, Titan, and Wrath\nToggle Inferno visual using the \"Show Toggle\" shotcut in the mod configuration menu"
-			InfiniteDangerBuffs: Combines the effects of Dangersense and Hunter
+			InfiniteDamageBuffs: "Combines the effects of Inferno, Rage, Summoning, Thorns, Titan, and Wrath\nToggle Inferno visual using the mod configuration menu"
+			InfiniteDangerBuffs: "Combines the effects of Dangersense and Hunter\nWall hax"
 			InfiniteDefenseBuffs: Combines the effects of Endurance, Heartreach, Lifeforce, and Warmth
 			InfiniteExplorerBuffs: Explore in safety
+			InfiniteFishingBuffs: Combines the effects of 
 			InfiniteGatheringBuffs: Combines the effects of Mining, Night Owl, Obsidian Skin, Shine, and Spelunker
 			InfiniteHeartLantern: Life regeneration is increased while in your inventory
 			InfiniteHoney: Life regeneration is increased while in your inventory
@@ -29,6 +30,7 @@ Mods: {
 			InfiniteSunflower: Movement speed increased and monster spawns reduced while in your inventory
 			InfiniteTipsy: "Minor improvements to melee stats while in your inventory\n\"You're used to it\""
 			InfiniteWaterCandle: Increased monster spawn rate while in your inventory
+			InfiniteWormholePotion: Use your map to teleport to other player while in your inventory
 			Tier1Buff: "{0} while in your inventory"
 		}
 		RecipeGroup: {
