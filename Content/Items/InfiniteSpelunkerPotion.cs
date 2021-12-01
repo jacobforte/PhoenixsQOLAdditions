@@ -13,7 +13,10 @@ namespace PhoenixsQOLAdditions.Content.Items
 
 		protected override void BuffEffect(Player player)
 		{
-			player.findTreasure = PhoenixsQOLAdditions.SpelunkerBuffEnabled;
+			if (PhoenixsQOLAdditions.SpelunkerBuffEnabled)
+			{
+				player.findTreasure = true;
+			}
 		}
 	}
 }

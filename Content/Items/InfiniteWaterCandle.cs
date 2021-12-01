@@ -14,8 +14,11 @@ namespace PhoenixsQOLAdditions.Content.Items
 
 		public sealed override void UpdateInventory(Player player)
 		{
-			player.buffImmune[BuffID.WaterCandle] = true;
-			player.ZoneWaterCandle = true;
+			if (PhoenixsQOLAdditions.BattlerEnabled)
+			{
+				player.buffImmune[BuffID.WaterCandle] = true;
+				player.ZoneWaterCandle = true;
+			}
 		}
 
 		public override void AddRecipes()

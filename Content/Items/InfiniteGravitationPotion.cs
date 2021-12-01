@@ -12,7 +12,10 @@ namespace PhoenixsQOLAdditions.Content.Items
 
 		protected override void BuffEffect(Player player)
 		{
-			player.gravControl = true;
+			if (PhoenixsQOLAdditions.GravityBuffEnabled)
+			{
+				player.gravControl = true;
+			}
 		}
 	}
 }

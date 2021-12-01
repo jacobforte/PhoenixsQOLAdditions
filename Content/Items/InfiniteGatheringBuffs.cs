@@ -12,13 +12,16 @@ namespace PhoenixsQOLAdditions.Content.Items
 		protected override string TooltipString => PhoenixsQOLAdditions.GetText("ItemTooltip", "InfiniteGatheringBuffs");
 		protected override Dictionary<int, Type> GetParrentItemTypes()
 		{
-			var dict = new Dictionary<int, Type>();
-			dict.Add(ModContent.ItemType<InfiniteSpelunkerPotion>(), typeof(InfiniteSpelunkerPotion));
-			dict.Add(ModContent.ItemType<InfiniteNightOwlPotion>(), typeof(InfiniteNightOwlPotion));
-			dict.Add(ModContent.ItemType<InfiniteObsidianSkinPotion>(), typeof(InfiniteObsidianSkinPotion));
-			dict.Add(ModContent.ItemType<InfiniteMiningPotion>(), typeof(InfiniteMiningPotion));
-			dict.Add(ModContent.ItemType<InfiniteShinePotion>(), typeof(InfiniteShinePotion));
-			return dict;
+			return Buffs;
 		}
+
+		private static Dictionary<int, Type> Buffs = new Dictionary<int, Type>()
+		{
+			{ ModContent.ItemType<InfiniteSpelunkerPotion>(), typeof(InfiniteSpelunkerPotion) },
+			{ ModContent.ItemType<InfiniteNightOwlPotion>(), typeof(InfiniteNightOwlPotion) },
+			{ ModContent.ItemType<InfiniteObsidianSkinPotion>(), typeof(InfiniteObsidianSkinPotion) },
+			{ ModContent.ItemType<InfiniteMiningPotion>(), typeof(InfiniteMiningPotion) },
+			{ ModContent.ItemType<InfiniteShinePotion>(), typeof(InfiniteShinePotion) }
+		};
 	}
 }

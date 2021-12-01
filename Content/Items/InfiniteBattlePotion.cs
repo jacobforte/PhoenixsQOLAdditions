@@ -12,7 +12,10 @@ namespace PhoenixsQOLAdditions.Content.Items
 
 		protected override void BuffEffect(Player player)
 		{
-			player.enemySpawns = true;
+			if (PhoenixsQOLAdditions.BattlerEnabled)
+			{
+				player.enemySpawns = true;
+			}
 		}
 	}
 }

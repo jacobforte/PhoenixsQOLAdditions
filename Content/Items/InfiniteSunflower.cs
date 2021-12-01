@@ -16,7 +16,10 @@ namespace PhoenixsQOLAdditions.Content.Items
 			player.buffImmune[BuffID.Sunflower] = true;
 			player.moveSpeed += 0.1f;
 			player.moveSpeed *= 1.1f;
-			player.sunflower = true;
+			if (PhoenixsQOLAdditions.PeaceEnabled)
+			{
+				player.sunflower = true;
+			}
 		}
 
 		public override void AddRecipes()

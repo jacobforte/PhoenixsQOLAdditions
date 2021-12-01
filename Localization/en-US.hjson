@@ -6,43 +6,51 @@ Mods: {
 			InfiniteAquaticBuffs: Combines the effects of Flipper, Gills, and Water Walking
 			InfiniteBasicBuffs: Combines the effects of Exquisitely Stuffed, Ironskin, Swiftness, and Regeneration
 			InfiniteBastStatue: Defense is increased by 5 while in your inventory
-			InfiniteBattlerBuffs: Combines the effects of Battle and Water Candle
+			InfiniteBattlerBuffs: "Combines the effects of Battle and Water Candle\nToggle increased spawn rate using the toggle menu"
 			InfiniteBewitchingTable: Increased max number of minions while in your inventory
+			InfiniteBuffs: Special text here
 			InfiniteCake: 20% increased movement and mining speed while in your inventory
 			InfiniteCampfire: Life regen is slightly increased while in your inventory
 			InfiniteCombatBuffs: Thats a lot of damage
 			InfiniteCrystalBall: Magic powers are increased while in your inventory
-			InfiniteDamageBuffs: "Combines the effects of Inferno, Rage, Summoning, Thorns, Titan, and Wrath\nToggle Inferno visual using the mod configuration menu"
-			InfiniteDangerBuffs: "Combines the effects of Dangersense and Hunter\nWall hax"
+			InfiniteDamageBuffs: "Combines the effects of Inferno, Rage, Summoning, Thorns, Titan, and Wrath\nToggle Inferno visual using the toggle menu"
+			InfiniteDangerBuffs: "Combines the effects of Dangersense and Hunter"
 			InfiniteDefenseBuffs: Combines the effects of Endurance, Heartreach, Lifeforce, and Warmth
 			InfiniteExplorerBuffs: Explore in safety
-			InfiniteFishingBuffs: Combines the effects of 
+			InfiniteFishingBuffs: "Combines the effects of Crate, Fishing, and Sonar\nToggle Crate buff using the toggle menu"
+			InfiniteFlightBuffs: "Combines the effects of Featherfall and Gravity\nToggle both buffs using the toggle menu"
 			InfiniteGatheringBuffs: Combines the effects of Mining, Night Owl, Obsidian Skin, Shine, and Spelunker
 			InfiniteHeartLantern: Life regeneration is increased while in your inventory
 			InfiniteHoney: Life regeneration is increased while in your inventory
 			InfiniteMagicBuffs: Combines the effects of Magic Power and Mana Regeneration
-			InfinitePeaceBuffs: Combines the effects of Peace Candle, Peace Potion and Sunflowers
+			InfinitePeaceBuffs: "Combines the effects of Peace Candle, Peace Potion and Sunflowers\nToggle reduced spawn rate using the toggle menu"
 			InfinitePeaceCandle: Decreased monster spawn rate while in your inventory
 			InfiniteRangedBuffs: Combines the effects of Ammo Reservation and Archery
+			InfiniteRecallPotion: Use the configured hotkey to teleport to your spawn point
+			InfiniteReturnPotion: Use the configured hotkeys to teleport to your spawn point and back
 			InfiniteSharpeningStation: Melee weapons have 12 armor penetration while in your inventory
 			InfiniteStarInABottle: Increased mana regeneration while in your inventory
 			InfiniteStationBuffs: Combines the effects of Ammo Box, Cake, Crystal Ball, Bewitching Table, and Sharpening Station
-			InfiniteSunflower: Movement speed increased and monster spawns reduced while in your inventory
+			InfiniteSunflower: "Movement speed increased and monster spawn rate reduced while in your inventory\nToggle reduced spawn rate using the toggle menu"
+			InfiniteTeleportationPotion: Use to teleport to a random location in the world
+			InfiniteTravelBuffs: "Use to teleport to a random location in the world\nUse the configured hotkeys to teleport to your spawn point and back"
 			InfiniteTipsy: "Minor improvements to melee stats while in your inventory\n\"You're used to it\""
-			InfiniteWaterCandle: Increased monster spawn rate while in your inventory
+			InfiniteWaterCandle: "Increased monster spawn rate while in your inventory\nToggle effect using the toggle menu"
 			InfiniteWormholePotion: Use your map to teleport to other player while in your inventory
 			Tier1Buff: "{0} while in your inventory"
 		}
 		RecipeGroup: {
-			WellFed: Any well fed food item
-			PlentySatisfied: Any plenty satisfied food item
-			ExquisitelyStuffed: Any exquisitely stuffed food item
-			Tipsy: Any alcoholic beverage
 			Campfire: Any campfire
+			EvilShrooms: Visious or Vile mushroom
+			ExquisitelyStuffed: Any exquisitely stuffed food item
+			TissueAndScales: Tissue Samples or Shadow Scales
+			PlentySatisfied: Any plenty satisfied food item
+			Tipsy: Any alcoholic beverage
+			WellFed: Any well fed food item
 		}
 		KeyBindings: {
-			ShowToggles: Show buff effect toggles
 			QuickRecall: Quick recall
+			QuickReturn: Quick return
 		}
 	}
 }

@@ -21,12 +21,37 @@ namespace PhoenixsQOLAdditions
 		public static bool InvisibilityBuffEnabled { get; set; } = true;
 		public static bool InfernoVisualEnabled { get; set; } = true;
 		public static bool CrateBuffEnabled { get; set; } = true;
-		public static bool UltimateBattlerEnabled { get; set; } = false;
-		public static bool UltimatePeaceEnabled { get; set; } = false;
+		private static bool _BattlerEnabled = false;
+		public static bool BattlerEnabled
+		{
+			get => _BattlerEnabled;
+			set
+			{
+				if (value == true)
+				{
+					PeaceEnabled = false;
+				}
+				_BattlerEnabled = true;
+			}
+		}
+		private static bool _PeaceEnabled = false;
+		public static bool PeaceEnabled
+		{
+			get => _PeaceEnabled;
+			set
+			{
+				if (value == true)
+				{
+					BattlerEnabled = false;
+				}
+				_PeaceEnabled = true;
+			}
+		}
+		public static bool TipsyReducesDefense { get; } = true;
 
 		//Keybindings
-		public static ModKeybind ShowToggles { get; set; }
 		public static ModKeybind QuickRecall { get; set; }
+		public static ModKeybind QuickReturn { get; set; }
 
 
 		internal static Dictionary<string, ModTranslation> translations;
@@ -42,17 +67,17 @@ namespace PhoenixsQOLAdditions
 			FieldInfo translationsField = typeof(LocalizationLoader).GetField("translations", BindingFlags.Static | BindingFlags.NonPublic);
 			translations = ((Dictionary<string, ModTranslation>)translationsField.GetValue(this)).Where(etc => etc.Key.StartsWith("Mods.PhoenixsQOLAdditions")).ToDictionary(mc => mc.Key, mc => mc.Value);
 
-			ShowToggles = KeybindLoader.RegisterKeybind(this, GetText("KeyBindings", "ShowToggles"), "Y");
 			QuickRecall = KeybindLoader.RegisterKeybind(this, GetText("KeyBindings", "QuickRecall"), "R");
+			QuickReturn = KeybindLoader.RegisterKeybind(this, GetText("KeyBindings", "QuickReturn"), "Y");
 
-			On.Terraria.Player.HasUnityPotion += (orig, player) => HasUnityPotionOverride(player);
-			On.Terraria.Player.TakeUnityPotion += (orig, player) => TakeUnityPotionOverride(player);
+			On.Terraria.Player.HasUnityPotion += (orig, player) => HasUnityPotionOverride(orig, player);
+			On.Terraria.Player.TakeUnityPotion += (orig, player) => TakeUnityPotionOverride(orig, player);
 		}
 
 		public override void Unload()
 		{
-			ShowToggles = null;
 			QuickRecall = null;
+			QuickReturn = null;
 		}
 
 		public override void AddRecipeGroups()
@@ -97,46 +122,22 @@ namespace PhoenixsQOLAdditions
 			return string.Format(translations[$"Mods.PhoenixsQOLAdditions.{category}.{key}"].GetTranslation(Language.ActiveCulture), args);
 		}
 
-		private bool HasUnityPotionOverride(Player player)
+		private bool HasUnityPotionOverride(On.Terraria.Player.orig_HasUnityPotion orig, Player player)
 		{
-			if (player.HasItem(ModContent.ItemType<InfiniteWormholePotion>()))// || player.HasItem(ModContent.ItemType<InfiniteBuffs>()) || player.HasItem(ModContent.ItemType<InfiniteTravelBuffs>()))
+			if (player.HasItem(ModContent.ItemType<InfiniteWormholePotion>()) || player.HasItem(ModContent.ItemType<InfiniteTravelBuffs>()) || player.HasItem(ModContent.ItemType<InfiniteBuffs>()))
 			{
 				return true;
 			}
-
-			for (int i = 0; i < 58; i++)
-			{
-				if (player.inventory[i].type == 2997 && player.inventory[i].stack > 0)
-					return true;
-			}
-
-			return false;
+			return orig(player);
 		}
 
-		private void TakeUnityPotionOverride(Player player)
+		private void TakeUnityPotionOverride(On.Terraria.Player.orig_TakeUnityPotion orig, Player player)
 		{
-			if (player.HasItem(ModContent.ItemType<InfiniteWormholePotion>()))
+			if (player.HasItem(ModContent.ItemType<InfiniteWormholePotion>()) || player.HasItem(ModContent.ItemType<InfiniteTravelBuffs>()) || player.HasItem(ModContent.ItemType<InfiniteBuffs>()))
 			{
 				return;
 			}
-
-			int num = 0;
-			while (true)
-			{
-				if (num < 400)
-				{
-					if (player.inventory[num].type == 2997 && player.inventory[num].stack > 0)
-						break;
-
-					num++;
-					continue;
-				}
-
-				return;
-			}
-			player.inventory[num].stack--;
-			if (player.inventory[num].stack <= 0)
-				player.inventory[num].SetDefaults();
+			orig(player);
 		}
 	}
 }

@@ -12,7 +12,10 @@ namespace PhoenixsQOLAdditions.Content.Items
 
 		protected override void BuffEffect(Player player)
 		{
-			player.cratePotion = PhoenixsQOLAdditions.CrateBuffEnabled;
+			if (PhoenixsQOLAdditions.CrateBuffEnabled)
+			{
+				player.cratePotion = true;
+			}
 		}
 	}
 }

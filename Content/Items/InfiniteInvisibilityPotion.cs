@@ -12,7 +12,10 @@ namespace PhoenixsQOLAdditions.Content.Items
 
 		protected override void BuffEffect(Player player)
 		{
-			player.invis = true;
+			if (PhoenixsQOLAdditions.InvisibilityBuffEnabled)
+			{
+				player.invis = true;
+			}
 		}
 	}
 }

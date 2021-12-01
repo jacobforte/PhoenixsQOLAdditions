@@ -27,7 +27,8 @@ namespace PhoenixsQOLAdditions.Content.Items
 
 		public sealed override void UpdateInventory(Player player)
 		{
-			foreach (var parrentItemType in ParrentItemTypes)
+			var localParrentItemTypes = ParrentItemTypes;
+			foreach (var parrentItemType in localParrentItemTypes)
 			{
 				Type type = parrentItemType.Value;
 				if (!player.HasItem(parrentItemType.Key))

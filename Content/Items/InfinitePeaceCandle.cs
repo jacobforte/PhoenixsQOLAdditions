@@ -14,7 +14,10 @@ namespace PhoenixsQOLAdditions.Content.Items
 		public sealed override void UpdateInventory(Player player)
 		{
 			player.buffImmune[BuffID.PeaceCandle] = true;
-			player.ZonePeaceCandle = true;
+			if (PhoenixsQOLAdditions.PeaceEnabled)
+			{
+				player.ZonePeaceCandle = true;
+			}
 		}
 
 		public override void AddRecipes()

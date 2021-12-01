@@ -14,6 +14,10 @@ namespace PhoenixsQOLAdditions.Content.Items
 		public sealed override void UpdateInventory(Player player)
 		{
 			player.buffImmune[BuffID.Tipsy] = true;
+			if (PhoenixsQOLAdditions.TipsyReducesDefense && new Item(player.selectedItem).DamageType == DamageClass.Melee)
+			{
+				player.statDefense -= 4;
+			}
 			player.GetCritChance(DamageClass.Melee) += 2;
 			player.GetDamage(DamageClass.Melee) += 0.1f;
 			player.meleeSpeed += 0.1f;

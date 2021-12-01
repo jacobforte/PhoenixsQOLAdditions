@@ -12,7 +12,10 @@ namespace PhoenixsQOLAdditions.Content.Items
 
 		protected override void BuffEffect(Player player)
 		{
-			player.calmed = true;
+			if (PhoenixsQOLAdditions.PeaceEnabled)
+			{
+				player.calmed = true;
+			}
 		}
 	}
 }

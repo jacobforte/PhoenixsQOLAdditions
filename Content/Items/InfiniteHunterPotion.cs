@@ -12,7 +12,10 @@ namespace PhoenixsQOLAdditions.Content.Items
 
 		protected override void BuffEffect(Player player)
 		{
-			player.detectCreature = PhoenixsQOLAdditions.DangerBuffsEnabled;
+			if (PhoenixsQOLAdditions.DangerBuffsEnabled)
+			{
+				player.detectCreature = true;
+			}
 		}
 	}
 }
