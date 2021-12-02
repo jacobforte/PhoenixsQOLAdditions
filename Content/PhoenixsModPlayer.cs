@@ -1,5 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
-using PhoenixsQOLAdditions.Content.Items;
+using PhoenixsQOLAdditions.Content.Items.Buffs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
