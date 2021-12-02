@@ -47,7 +47,6 @@ namespace PhoenixsQOLAdditions
 				_PeaceEnabled = true;
 			}
 		}
-		public static bool TipsyReducesDefense { get; } = true;
 
 		//Keybindings
 		public static ModKeybind QuickRecall { get; set; }

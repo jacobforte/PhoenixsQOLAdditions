@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using PhoenixsQOLAdditions.Common.Configs;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -14,7 +14,7 @@ namespace PhoenixsQOLAdditions.Content.Items.Buffs
 		public sealed override void UpdateInventory(Player player)
 		{
 			player.buffImmune[BuffID.Tipsy] = true;
-			if (PhoenixsQOLAdditions.TipsyReducesDefense && new Item(player.selectedItem).DamageType == DamageClass.Melee)
+			if (ModContent.GetInstance<PhoenixsModConfig>().TipsyReducesDefense && new Item(player.selectedItem).DamageType == DamageClass.Melee)
 			{
 				player.statDefense -= 4;
 			}
