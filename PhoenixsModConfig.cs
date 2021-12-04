@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Terraria.ModLoader.Config;
 
-namespace PhoenixsQOLAdditions.Common.Configs
+namespace PhoenixsQOLAdditions
 {
 	public class PhoenixsModConfig : ModConfig
 	{

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
+using Terraria.GameContent.Creative;
 using Terraria.GameInput;
 using Terraria.ID;
 using Terraria.Localization;
@@ -19,6 +20,7 @@ namespace PhoenixsQOLAdditions.Content.Items.Buffs
 
 		public override void SetDefaults()
 		{
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 			Item.CloneDefaults(ItemID.TeleportationPotion);
 			Item.maxStack = 1;
 			Item.consumable = false;

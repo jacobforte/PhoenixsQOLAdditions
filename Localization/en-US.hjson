@@ -55,6 +55,7 @@ Mods: {
 		KeyBindings: {
 			QuickRecall: Quick recall
 			QuickReturn: Quick return
+			ToggleMenu: Open toggle menu
 		}
 	}
 }

@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
 using System.Runtime.Versioning;
+using Terraria.GameContent.Creative;
 
 namespace PhoenixsQOLAdditions.Content.Items.Buffs
 {
@@ -14,6 +15,7 @@ namespace PhoenixsQOLAdditions.Content.Items.Buffs
 
 		public sealed override void SetStaticDefaults()
 		{
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 			Tooltip.SetDefault(TooltipString);
 		}
 

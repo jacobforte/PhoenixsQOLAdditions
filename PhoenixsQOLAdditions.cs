@@ -1,13 +1,14 @@
 using PhoenixsQOLAdditions.Content.Items.Buffs;
+using PhoenixsQOLAdditions.UIElements;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Terraria;
-using Terraria.GameContent.Bestiary;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
+using Terraria.UI;
 
 namespace PhoenixsQOLAdditions
 {
@@ -47,11 +48,13 @@ namespace PhoenixsQOLAdditions
 				_PeaceEnabled = true;
 			}
 		}
+		public static bool ShowToggleMenu { get; set; } = false;
+		internal static UserInterface ToggleMenuInterface { get; private set; }
 
 		//Keybindings
-		public static ModKeybind QuickRecall { get; set; }
-		public static ModKeybind QuickReturn { get; set; }
-
+		public static ModKeybind QuickRecallKeybind { get; set; }
+		public static ModKeybind QuickReturnKeybind { get; set; }
+		public static ModKeybind ToggleMenuKeybind { get; private set; }
 
 		internal static Dictionary<string, ModTranslation> translations;
 		public override Version Version => new Version(0, 0, 1);
@@ -66,17 +69,29 @@ namespace PhoenixsQOLAdditions
 			FieldInfo translationsField = typeof(LocalizationLoader).GetField("translations", BindingFlags.Static | BindingFlags.NonPublic);
 			translations = ((Dictionary<string, ModTranslation>)translationsField.GetValue(this)).Where(etc => etc.Key.StartsWith("Mods.PhoenixsQOLAdditions")).ToDictionary(mc => mc.Key, mc => mc.Value);
 
-			QuickRecall = KeybindLoader.RegisterKeybind(this, GetText("KeyBindings", "QuickRecall"), "R");
-			QuickReturn = KeybindLoader.RegisterKeybind(this, GetText("KeyBindings", "QuickReturn"), "Y");
+			QuickRecallKeybind = KeybindLoader.RegisterKeybind(this, GetText("KeyBindings", "QuickRecall"), "T");
+			QuickReturnKeybind = KeybindLoader.RegisterKeybind(this, GetText("KeyBindings", "QuickReturn"), "Y");
+			ToggleMenuKeybind = KeybindLoader.RegisterKeybind(this, GetText("KeyBindings", "ToggleMenu"), "Z");
 
 			On.Terraria.Player.HasUnityPotion += (orig, player) => HasUnityPotionOverride(orig, player);
 			On.Terraria.Player.TakeUnityPotion += (orig, player) => TakeUnityPotionOverride(orig, player);
+
+			if (!Main.dedServ)
+			{
+				ToggleMenuUI.Instance = new ToggleMenuUI();
+				ToggleMenuUI.Instance.Initialize();
+				ToggleMenuInterface = new UserInterface();
+				ToggleMenuInterface.SetState(ToggleMenuUI.Instance);
+			}
 		}
 
 		public override void Unload()
 		{
-			QuickRecall = null;
-			QuickReturn = null;
+			QuickRecallKeybind = null;
+			QuickReturnKeybind = null;
+			ToggleMenuKeybind = null;
+			ToggleMenuUI.Instance = null;
+			ToggleMenuInterface = null;
 		}
 
 		public override void AddRecipeGroups()

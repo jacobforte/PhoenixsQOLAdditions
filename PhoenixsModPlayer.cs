@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using PhoenixsQOLAdditions.Content.Items.Buffs;
+using PhoenixsQOLAdditions.UIElements;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ using Terraria.GameInput;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace PhoenixsQOLAdditions.Content
+namespace PhoenixsQOLAdditions
 {
 	public class PhoenixsModPlayer : ModPlayer
 	{
@@ -19,7 +20,7 @@ namespace PhoenixsQOLAdditions.Content
 
 		public override void ProcessTriggers(TriggersSet triggersSet)
 		{
-			if (PhoenixsQOLAdditions.QuickRecall.JustPressed && (Player.HasItem(ModContent.ItemType<InfiniteRecallPotion>()) || Player.HasItem(ModContent.ItemType<InfiniteReturnPotion>()) || Player.HasItem(ModContent.ItemType<InfiniteTravelBuffs>()) || Player.HasItem(ModContent.ItemType<InfiniteBuffs>())))
+			if (PhoenixsQOLAdditions.QuickRecallKeybind.JustPressed && (Player.HasItem(ModContent.ItemType<InfiniteRecallPotion>()) || Player.HasItem(ModContent.ItemType<InfiniteReturnPotion>()) || Player.HasItem(ModContent.ItemType<InfiniteTravelBuffs>()) || Player.HasItem(ModContent.ItemType<InfiniteBuffs>())))
 			{
 				ReturnLocation = Player.position;
 				SoundEngine.PlaySound(SoundID.Item6, Player.position);
@@ -39,7 +40,7 @@ namespace PhoenixsQOLAdditions.Content
 					Main.dust[Dust.NewDust(Player.position, Player.width, Player.height, DustID.MagicMirror, 0f, 0f, 150, Color.Cyan, 1.2f)].velocity *= 0.5f;
 				}
 			}
-			else if (PhoenixsQOLAdditions.QuickReturn.JustPressed && ReturnLocation != null && (Player.HasItem(ModContent.ItemType<InfiniteReturnPotion>()) || Player.HasItem(ModContent.ItemType<InfiniteReturnPotion>()) || Player.HasItem(ModContent.ItemType<InfiniteBuffs>())))
+			else if (PhoenixsQOLAdditions.QuickReturnKeybind.JustPressed && ReturnLocation != null && (Player.HasItem(ModContent.ItemType<InfiniteReturnPotion>()) || Player.HasItem(ModContent.ItemType<InfiniteReturnPotion>()) || Player.HasItem(ModContent.ItemType<InfiniteBuffs>())))
 			{
 				SoundEngine.PlaySound(SoundID.Item6, Player.position);
 				for (int num4 = 0; num4 < 70; num4++)
@@ -58,6 +59,10 @@ namespace PhoenixsQOLAdditions.Content
 					Main.dust[Dust.NewDust(Player.position, Player.width, Player.height, DustID.MagicMirror, 0f, 0f, 150, Color.Cyan, 1.2f)].velocity *= 0.5f;
 				}
 				ReturnLocation = null;
+			}
+			else if (PhoenixsQOLAdditions.ToggleMenuKeybind.JustPressed)
+			{
+				PhoenixsQOLAdditions.ShowToggleMenu = !PhoenixsQOLAdditions.ShowToggleMenu;
 			}
 		}
 	}
