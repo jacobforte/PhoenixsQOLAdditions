@@ -12,7 +12,7 @@ namespace PhoenixsQOLAdditions.Content.Items.Buffs
 
 		protected override void BuffEffect(Player player)
 		{
-			if (PhoenixsQOLAdditions.FeatherFallBuffEnabled)
+			if (PhoenixsQOLAdditions.FeatherfallBuffEnabled)
 			{
 				player.slowFall = true;
 			}

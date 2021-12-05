@@ -19,7 +19,7 @@ namespace PhoenixsQOLAdditions
 		//Properties to enable/disable any possibly undesireable buff effects.
 		public static bool DangerBuffsEnabled { get; set; } = true;
 		public static bool SpelunkerBuffEnabled { get; set; } = true;
-		public static bool FeatherFallBuffEnabled { get; set; } = true;
+		public static bool FeatherfallBuffEnabled { get; set; } = true;
 		public static bool GravityBuffEnabled { get; set; } = true;
 		public static bool InvisibilityBuffEnabled { get; set; } = true;
 		public static bool InfernoVisualEnabled { get; set; } = true;

@@ -1,6 +1,15 @@
 Mods: {
 	PhoenixsQOLAdditions: {
 		Config: {
+			BattlerToggle: Battler
+			CrateToggle: Crate
+			DangerToggle: Danger
+			FeatherfallToggle: Featherfall
+			GravitationToggle: Gravitation
+			InfernoToggle: Inferno visual
+			InvisibilityToggle: Invisibilty
+			PeaceToggle: Peace
+			SpelunkerToggle: Spelunker
 			TipsyLabel: Tipsy reduces defense
 			TipsyTooltip: Tipsy reduces defense by 4 when holding a melee weapon
 		}
