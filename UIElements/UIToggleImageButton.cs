@@ -13,29 +13,24 @@ namespace PhoenixsQOLAdditions.UIElements
 	{
 		public ToggleEventHandler OnToggle;
 
-		private readonly Asset<Texture2D> Texture;
+		private readonly Texture2D Texture;
 		private readonly float VisibilityEnabled = 1f;
 		private readonly float VisibilityDisabled = 0.4f;
-		private readonly Asset<Texture2D> BorderTexture;
 		private bool IsEnabled;
 
 		public UIToggleImageButton(Asset<Texture2D> texture, bool isEnabled)
 		{
-			Texture = texture;
+			Texture = texture.Value;
 			Width.Set(texture.Width(), 0);
 			Height.Set(texture.Height(), 0);
 			IsEnabled = isEnabled;
-			BorderTexture = Main.Assets.Request<Texture2D>("Images/UI/PanelBackground");
 		}
 
 		protected override void DrawSelf(SpriteBatch spriteBatch)
 		{
-			CalculatedStyle dimensions = GetDimensions();
-			spriteBatch.Draw(Texture.Value, dimensions.Position(), Color.White * (IsEnabled ? VisibilityEnabled : VisibilityDisabled));
-			if (BorderTexture != null && base.IsMouseHovering)
-			{
-				spriteBatch.Draw(BorderTexture.Value, dimensions.Position(), Color.White);
-			}
+			spriteBatch.Draw(Texture,
+				GetDimensions().Position(),
+				Color.White * (IsEnabled ? VisibilityEnabled : VisibilityDisabled));
 		}
 
 		public override void MouseOver(UIMouseEvent evt)

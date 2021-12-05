@@ -21,7 +21,10 @@ namespace PhoenixsQOLAdditions.UIElements
 		public override void MouseUp(UIMouseEvent evt)
 		{
 			base.MouseUp(evt);
-			DragEnd(evt);
+			if (dragging)
+			{
+				DragEnd(evt);
+			}
 		}
 
 		private void DragStart(UIMouseEvent evt)
@@ -43,14 +46,14 @@ namespace PhoenixsQOLAdditions.UIElements
 
 		protected override void DrawSelf(SpriteBatch spriteBatch)
 		{
+			base.DrawSelf(spriteBatch);
+
 			if (ContainsPoint(Main.MouseScreen))
 			{
 				Main.LocalPlayer.mouseInterface = true;
 				Main.LocalPlayer.cursorItemIconEnabled = false;
 				Main.ItemIconCacheUpdate(0);
 			}
-
-			base.DrawSelf(spriteBatch);
 		}
 
 		public override void Update(GameTime gameTime)

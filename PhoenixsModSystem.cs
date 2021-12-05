@@ -32,14 +32,15 @@ namespace PhoenixsQOLAdditions
 				int inventoryLayerIndex = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
 				if (inventoryLayerIndex != -1)
 				{
-					layers.Insert(inventoryLayerIndex, new LegacyGameInterfaceLayer("ToggleMenu: Buff Toggle Menu", DrawToggleMenuUI, InterfaceScaleType.UI));
+					layers.Insert(inventoryLayerIndex, new LegacyGameInterfaceLayer("ToggleMenu: Buff Toggle Menu", 
+						DrawToggleMenuUI, InterfaceScaleType.UI));
 				}
 			}
 		}
 
 		private bool DrawToggleMenuUI()
 		{
-			PhoenixsQOLAdditions.ToggleMenuInterface.Draw(Main.spriteBatch, null);
+			ToggleMenuUI.Instance.Draw(Main.spriteBatch);
 			return true;
 		}
 	}

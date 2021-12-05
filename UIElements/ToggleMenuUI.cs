@@ -1,13 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ReLogic.Content;
 using Terraria;
-using Terraria.GameContent.UI.Elements;
-using Terraria.ModLoader;
 using Terraria.UI;
 
 namespace PhoenixsQOLAdditions.UIElements
@@ -26,10 +20,11 @@ namespace PhoenixsQOLAdditions.UIElements
 			Panel.Height.Set(100, 0);
 			Panel.Width.Set(475, 0);
 
-			var dangerTexture = PhoenixsQOLAdditions.Instance.Assets.Request<Texture2D>("UIElements/DangerBuffEnabled");
+			var dangerTexture = PhoenixsQOLAdditions.Instance.Assets.Request<Texture2D>("UIElements/DangerBuffEnabled", AssetRequestMode.ImmediateLoad);
 			var dangerBuffsToggle = new UIToggleImageButton(dangerTexture, PhoenixsQOLAdditions.DangerBuffsEnabled);
 			dangerBuffsToggle.OnToggle += (value) => { PhoenixsQOLAdditions.DangerBuffsEnabled = value; };
 			Panel.Append(dangerBuffsToggle);
+
 			Append(Panel);
 		}
 
