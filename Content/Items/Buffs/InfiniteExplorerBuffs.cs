@@ -17,7 +17,7 @@ namespace PhoenixsQOLAdditions.Content.Items.Buffs
 
 		private static Dictionary<int, Type> Buffs = new Dictionary<int, Type>()
 		{
-			{ ModContent.ItemType<InfiniteBasicBuffs>(), typeof(InfiniteBasicBuffs) },
+			{ ModContent.ItemType<InfiniteDangerBuffs>(), typeof(InfiniteDangerBuffs) },
 			{ ModContent.ItemType<InfiniteGatheringBuffs>(), typeof(InfiniteGatheringBuffs) },
 			{ ModContent.ItemType<InfiniteAquaticBuffs>(), typeof(InfiniteAquaticBuffs) },
 			{ ModContent.ItemType<InfiniteBuilderPotion>(), typeof(InfiniteBuilderPotion) }

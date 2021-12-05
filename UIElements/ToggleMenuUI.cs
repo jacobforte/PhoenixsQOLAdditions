@@ -15,20 +15,22 @@ namespace PhoenixsQOLAdditions.UIElements
 	internal class ToggleMenuUI : UIState
 	{
 		public static ToggleMenuUI Instance;
-		public DragableUIPanel Pannel;
+		public DragableUIPanel Panel;
 		private float oldScale;
 
 		public override void OnInitialize()
 		{
-			Pannel = new DragableUIPanel();
+			Panel = new DragableUIPanel();
+			Panel.Left.Set(603, 0);
+			Panel.Top.Set(86, 0);
+			Panel.Height.Set(100, 0);
+			Panel.Width.Set(475, 0);
 
-			Pannel.Left.Set(603f, 0f);
-			Pannel.Top.Set(86f, 0f);
-			Pannel.Height.Set(100f, 0f);
-			Pannel.Width.Set(475f, 0f);
-
-
-			Append(Pannel);
+			var dangerTexture = PhoenixsQOLAdditions.Instance.Assets.Request<Texture2D>("UIElements/DangerBuffEnabled");
+			var dangerBuffsToggle = new UIToggleImageButton(dangerTexture, PhoenixsQOLAdditions.DangerBuffsEnabled);
+			dangerBuffsToggle.OnToggle += (value) => { PhoenixsQOLAdditions.DangerBuffsEnabled = value; };
+			Panel.Append(dangerBuffsToggle);
+			Append(Panel);
 		}
 
 		public override void Update(GameTime gameTime)

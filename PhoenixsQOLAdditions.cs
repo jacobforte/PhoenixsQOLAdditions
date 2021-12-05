@@ -14,6 +14,8 @@ namespace PhoenixsQOLAdditions
 {
 	public class PhoenixsQOLAdditions : Mod
 	{
+		internal static PhoenixsQOLAdditions Instance { get; set; }
+
 		//Properties to enable/disable any possibly undesireable buff effects.
 		public static bool DangerBuffsEnabled { get; set; } = true;
 		public static bool SpelunkerBuffEnabled { get; set; } = true;
@@ -65,6 +67,7 @@ namespace PhoenixsQOLAdditions
 			{
 				throw new Exception("\nThis mod uses functionality only present in the latest tModLoader. Please update tModLoader to use this mod\n\n");
 			}
+			Instance = this;
 
 			FieldInfo translationsField = typeof(LocalizationLoader).GetField("translations", BindingFlags.Static | BindingFlags.NonPublic);
 			translations = ((Dictionary<string, ModTranslation>)translationsField.GetValue(this)).Where(etc => etc.Key.StartsWith("Mods.PhoenixsQOLAdditions")).ToDictionary(mc => mc.Key, mc => mc.Value);
@@ -87,6 +90,7 @@ namespace PhoenixsQOLAdditions
 
 		public override void Unload()
 		{
+			Instance = null;
 			QuickRecallKeybind = null;
 			QuickReturnKeybind = null;
 			ToggleMenuKeybind = null;

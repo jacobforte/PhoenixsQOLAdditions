@@ -12,7 +12,10 @@ namespace PhoenixsQOLAdditions.Content.Items.Buffs
 
 		protected override void BuffEffect(Player player)
 		{
-			player.dangerSense = PhoenixsQOLAdditions.DangerBuffsEnabled;
+			if (PhoenixsQOLAdditions.DangerBuffsEnabled)
+			{
+				player.dangerSense = true;
+			}
 		}
 	}
 }
