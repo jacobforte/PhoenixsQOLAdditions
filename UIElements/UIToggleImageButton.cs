@@ -3,17 +3,17 @@ using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
 using Terraria;
 using Terraria.Audio;
-using Terraria.GameContent.UI.Elements;
 using Terraria.UI;
 
 namespace PhoenixsQOLAdditions.UIElements
 {
-	internal delegate void ToggleEventHandler(bool value);
+	internal delegate void ToggleEventHandler();
+	public delegate bool IsEnabledDelegate();
 
 	internal class UIToggleImageButton : UIElement
 	{
-		public ToggleEventHandler OnToggle;
-		public bool IsEnabled;
+		public ToggleEventHandler OnToggle { get; set; }
+		public IsEnabledDelegate IsEnabled { get; set; }
 
 		private readonly Texture2D Texture;
 		private readonly float VisibilityEnabled = 1f;
@@ -31,7 +31,6 @@ namespace PhoenixsQOLAdditions.UIElements
 			Texture = texture.Value;
 			Width.Set(texture.Width(), 0);
 			Height.Set(texture.Height(), 0);
-			IsEnabled = isEnabled;
 
 			TextElement = new UITextMouseFollow(hoverText);
 		}
@@ -50,7 +49,7 @@ namespace PhoenixsQOLAdditions.UIElements
 		{
 			spriteBatch.Draw(Texture,
 				GetDimensions().Position(),
-				Color.White * (IsEnabled ? VisibilityEnabled : VisibilityDisabled));
+				Color.White * (IsEnabled() ? VisibilityEnabled : VisibilityDisabled));
 		}
 
 		public override void MouseOver(UIMouseEvent evt)
@@ -62,8 +61,7 @@ namespace PhoenixsQOLAdditions.UIElements
 		public override void MouseDown(UIMouseEvent evt)
 		{
 			base.Click(evt);
-			IsEnabled = !IsEnabled;
-			OnToggle?.Invoke(IsEnabled);
+			OnToggle?.Invoke();
 		}
 	}
 }

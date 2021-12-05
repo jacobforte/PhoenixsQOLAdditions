@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace PhoenixsQOLAdditions.Content.Items.Buffs
 {
@@ -12,9 +13,13 @@ namespace PhoenixsQOLAdditions.Content.Items.Buffs
 
 		protected override void BuffEffect(Player player)
 		{
-			if (PhoenixsQOLAdditions.FeatherfallBuffEnabled)
+			if (ModContent.GetInstance<PhoenixsModConfig>().FeatherfallBuffEnabled)
 			{
 				player.slowFall = true;
+			}
+			else
+			{
+				player.noFallDmg = true;
 			}
 		}
 	}

@@ -1,9 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Terraria;
+﻿using Terraria;
 using Terraria.ModLoader;
-using Terraria.ID;
-using System.Runtime.Versioning;
 using Terraria.GameContent.Creative;
 
 namespace PhoenixsQOLAdditions.Content.Items.Buffs

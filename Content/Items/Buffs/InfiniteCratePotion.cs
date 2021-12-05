@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace PhoenixsQOLAdditions.Content.Items.Buffs
 {
@@ -12,7 +13,7 @@ namespace PhoenixsQOLAdditions.Content.Items.Buffs
 
 		protected override void BuffEffect(Player player)
 		{
-			if (PhoenixsQOLAdditions.CrateBuffEnabled)
+			if (ModContent.GetInstance<PhoenixsModConfig>().CrateBuffEnabled)
 			{
 				player.cratePotion = true;
 			}

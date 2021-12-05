@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -16,7 +15,7 @@ namespace PhoenixsQOLAdditions.Content.Items.Buffs
 			player.buffImmune[BuffID.Sunflower] = true;
 			player.moveSpeed += 0.1f;
 			player.moveSpeed *= 1.1f;
-			if (PhoenixsQOLAdditions.PeaceEnabled)
+			if (ModContent.GetInstance<PhoenixsModConfig>().PeaceEnabled)
 			{
 				player.sunflower = true;
 			}

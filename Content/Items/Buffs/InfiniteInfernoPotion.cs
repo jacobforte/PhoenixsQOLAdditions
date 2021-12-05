@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace PhoenixsQOLAdditions.Content.Items.Buffs
 {
@@ -14,7 +15,7 @@ namespace PhoenixsQOLAdditions.Content.Items.Buffs
 
 		protected override void BuffEffect(Player player)
 		{
-			if (PhoenixsQOLAdditions.InfernoVisualEnabled)
+			if (ModContent.GetInstance<PhoenixsModConfig>().InfernoVisualEnabled)
 			{
 				// This is the visual effect
 				player.inferno = true;
@@ -55,7 +56,7 @@ namespace PhoenixsQOLAdditions.Content.Items.Buffs
 				if (flag)
 				{
 					_player.Hurt(PlayerDeathReason.LegacyEmpty(), damage, 0, pvp: true);
-					if (Main.netMode != 0)
+					if (Main.netMode != NetmodeID.SinglePlayer)
 					{
 						PlayerDeathReason reason = PlayerDeathReason.ByOther(16);
 						NetMessage.SendPlayerHurt(l, reason, damage, 0, critical: false, pvp: true, -1);

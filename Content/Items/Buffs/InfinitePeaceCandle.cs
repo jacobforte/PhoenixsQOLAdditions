@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -14,7 +13,7 @@ namespace PhoenixsQOLAdditions.Content.Items.Buffs
 		public sealed override void UpdateInventory(Player player)
 		{
 			player.buffImmune[BuffID.PeaceCandle] = true;
-			if (PhoenixsQOLAdditions.PeaceEnabled)
+			if (ModContent.GetInstance<PhoenixsModConfig>().PeaceEnabled)
 			{
 				player.ZonePeaceCandle = true;
 			}

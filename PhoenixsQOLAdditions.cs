@@ -16,40 +16,6 @@ namespace PhoenixsQOLAdditions
 	{
 		internal static PhoenixsQOLAdditions Instance { get; set; }
 
-		//Properties to enable/disable any possibly undesireable buff effects.
-		public static bool DangerBuffsEnabled { get; set; } = true;
-		public static bool SpelunkerBuffEnabled { get; set; } = true;
-		public static bool FeatherfallBuffEnabled { get; set; } = true;
-		public static bool GravityBuffEnabled { get; set; } = true;
-		public static bool InvisibilityBuffEnabled { get; set; } = true;
-		public static bool InfernoVisualEnabled { get; set; } = true;
-		public static bool CrateBuffEnabled { get; set; } = true;
-		private static bool _BattlerEnabled = false;
-		public static bool BattlerEnabled
-		{
-			get => _BattlerEnabled;
-			set
-			{
-				if (value == true)
-				{
-					PeaceEnabled = false;
-				}
-				_BattlerEnabled = true;
-			}
-		}
-		private static bool _PeaceEnabled = false;
-		public static bool PeaceEnabled
-		{
-			get => _PeaceEnabled;
-			set
-			{
-				if (value == true)
-				{
-					BattlerEnabled = false;
-				}
-				_PeaceEnabled = true;
-			}
-		}
 		public static bool ShowToggleMenu { get; set; } = false;
 		internal static UserInterface ToggleMenuInterface { get; private set; }
 

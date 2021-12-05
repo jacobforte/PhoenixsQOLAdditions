@@ -1,12 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
-using Terraria.Audio;
 using Terraria.GameContent.Creative;
-using Terraria.GameInput;
 using Terraria.ID;
-using Terraria.Localization;
-using Terraria.Map;
 using Terraria.ModLoader;
 
 namespace PhoenixsQOLAdditions.Content.Items.Buffs
@@ -36,10 +31,10 @@ namespace PhoenixsQOLAdditions.Content.Items.Buffs
 			}
 			else if (player.itemTime == 2)
 			{
-				if (Main.netMode == 0)
+				if (Main.netMode == NetmodeID.SinglePlayer)
 					player.TeleportationPotion();
-				else if (Main.netMode == 1 && player.whoAmI == Main.myPlayer)
-					NetMessage.SendData(73);
+				else if (Main.netMode == NetmodeID.MultiplayerClient && player.whoAmI == Main.myPlayer)
+					NetMessage.SendData(MessageID.RequestTeleportationByServer);
 			}
 		}
 

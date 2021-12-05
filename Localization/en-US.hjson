@@ -1,17 +1,28 @@
 Mods: {
 	PhoenixsQOLAdditions: {
 		Config: {
+			AutoSave: This will automatically save when using the Toggle Menu.
 			BattlerToggle: Battler
+			BattlerTooltip: "Enable/Disable Battle potion and Water Candle.\n{$Mods.PhoenixsQOLAdditions.Config.AutoSave}"
 			CrateToggle: Crate
+			CrateTooltip: "Enable/Disable Crate potion.\n{$Mods.PhoenixsQOLAdditions.Config.AutoSave}"
 			DangerToggle: Danger
+			DangerTooltip: "Enable/Disable Dangersense and Hunter potions.\n{$Mods.PhoenixsQOLAdditions.Config.AutoSave}"
 			FeatherfallToggle: Featherfall
+			FeatherfallTooltip: "Enable/Disable Featherfall potion.\nFall damage immunity always active.\n{$Mods.PhoenixsQOLAdditions.Config.AutoSave}"
 			GravitationToggle: Gravitation
+			GravitationTooltip: "Enable/Disable Gravitation potion.\n{$Mods.PhoenixsQOLAdditions.Config.AutoSave}"
 			InfernoToggle: Inferno visual
+			InfernoTooltip: "Enable/Disable Inferno visual.\n{$Mods.PhoenixsQOLAdditions.Config.AutoSave}"
 			InvisibilityToggle: Invisibilty
+			InvisibilityTooltip: "Enable/Disable Invisibility potion.\nMonster spawn rate reduced while active.\n{$Mods.PhoenixsQOLAdditions.Config.AutoSave}"
 			PeaceToggle: Peace
+			PeaceTooltip: "Enable/Disable Peace potion, Peace Candle, and Sunflower effects.\nSunflower movement speed buff always active.\n{$Mods.PhoenixsQOLAdditions.Config.AutoSave}"
 			SpelunkerToggle: Spelunker
+			SpelunkerTooltip: "Enable/Disable Spelunker potion.\n{$Mods.PhoenixsQOLAdditions.Config.AutoSave}"
 			TipsyLabel: Tipsy reduces defense
 			TipsyTooltip: Tipsy reduces defense by 4 when holding a melee weapon
+			Toggles: Buff toggles
 		}
 		ItemTooltip: {
 			InfiniteAmmoBox: 20% chance to not consume ammo while in your inventory

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -14,7 +13,7 @@ namespace PhoenixsQOLAdditions.Content.Items.Buffs
 
 		public sealed override void UpdateInventory(Player player)
 		{
-			if (PhoenixsQOLAdditions.BattlerEnabled)
+			if (ModContent.GetInstance<PhoenixsModConfig>().BattlerEnabled)
 			{
 				player.buffImmune[BuffID.WaterCandle] = true;
 				player.ZoneWaterCandle = true;
