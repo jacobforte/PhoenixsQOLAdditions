@@ -1,5 +1,9 @@
-﻿using Terraria;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Terraria;
 using Terraria.ModLoader;
+using Terraria.ID;
+using System.Runtime.Versioning;
 using Terraria.GameContent.Creative;
 
 namespace PhoenixsQOLAdditions.Content.Items.Buffs
@@ -20,6 +24,11 @@ namespace PhoenixsQOLAdditions.Content.Items.Buffs
 			Item.maxStack = 1;
 			Item.value = 0;
 			Item.rare = Rarity;
+		}
+
+		public override void ModifyResearchSorting(ref ContentSamples.CreativeHelper.ItemGroup itemGroup)
+		{
+			itemGroup = ContentSamples.CreativeHelper.ItemGroup.BuffPotion;
 		}
 
 		public abstract override void AddRecipes();

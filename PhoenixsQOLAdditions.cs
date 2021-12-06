@@ -38,8 +38,8 @@ namespace PhoenixsQOLAdditions
 			FieldInfo translationsField = typeof(LocalizationLoader).GetField("translations", BindingFlags.Static | BindingFlags.NonPublic);
 			translations = ((Dictionary<string, ModTranslation>)translationsField.GetValue(this)).Where(etc => etc.Key.StartsWith("Mods.PhoenixsQOLAdditions")).ToDictionary(mc => mc.Key, mc => mc.Value);
 
-			QuickRecallKeybind = KeybindLoader.RegisterKeybind(this, GetText("KeyBindings", "QuickRecall"), "T");
-			QuickReturnKeybind = KeybindLoader.RegisterKeybind(this, GetText("KeyBindings", "QuickReturn"), "Y");
+			QuickRecallKeybind = KeybindLoader.RegisterKeybind(this, GetText("KeyBindings", "QuickRecall"), "Y");
+			QuickReturnKeybind = KeybindLoader.RegisterKeybind(this, GetText("KeyBindings", "QuickReturn"), "U");
 			ToggleMenuKeybind = KeybindLoader.RegisterKeybind(this, GetText("KeyBindings", "ToggleMenu"), "Z");
 
 			On.Terraria.Player.HasUnityPotion += (orig, player) => HasUnityPotionOverride(orig, player);

@@ -57,8 +57,9 @@ Mods: {
 			InfiniteStationBuffs: Combines the effects of Ammo Box, Cake, Crystal Ball, Bewitching Table, and Sharpening Station
 			InfiniteSunflower: "Movement speed increased and monster spawn rate reduced while in your inventory\nToggle reduced spawn rate using the toggle menu"
 			InfiniteTeleportationPotion: Use to teleport to a random location in the world
-			InfiniteTravelBuffs: "Use to teleport to a random location in the world\nUse the configured hotkeys to teleport to your spawn point and back"
 			InfiniteTipsy: "Minor improvements to melee stats while in your inventory\n\"You're used to it\""
+			InfiniteTorch: "{0}\nNot Consumable"
+			InfiniteTravelBuffs: "Use to teleport to a random location in the world\nUse the configured hotkeys to teleport to your spawn point and back"
 			InfiniteWaterCandle: "Increased monster spawn rate while in your inventory\nToggle effect using the toggle menu"
 			InfiniteWormholePotion: Use your map to teleport to other player while in your inventory
 			Tier1Buff: "{0} while in your inventory"

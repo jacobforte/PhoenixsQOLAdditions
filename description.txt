@@ -6,35 +6,36 @@ Current features:
 * Hotkeys to quickly use recall and return.
 * All potentially undesireable effects, such as battle potion or inferno's visual effect can be toggled on and off.
 * Tipsy only reduces defense when holding a melee class weapon. defense loss can be turned off entirely in the config menu.
+* Toggle menu for quickly enableing disabling certain effects, such as battler and peace potions.
 
 Planned features:
-* Add toggles for some potions
 * Infinite versions of all torches and glowsticks.
 * Infinite Healing and mana potions.
 * Infinite versions of flasks.
 * Infinite versions of all ammo, arrows, consumable weapons, solutions, bombs, rope, stink, love, gender change, red potion. (do we need infinite food?)
 * Auto builders. Thin house, upsidedown house, helevator, pool builder, platform builder, rail builder.
-* Infinite fishing rods.
+* Baitless fishing rods.
 * Auto-apply buffs from piggybank/safe/defenders forge
 * Mobile piggybank/safe/defenders forge/merchant
+* Improved actuation rod, consumes no actuators
+* Improves wrench tool, combines all wrenches with ui select. Uses no wire, has ui wire select
 * Upgraded grand design uses no actuators or wires.
-* Improved actuation rod
 * Unlimited bucket and sponge
 * Make infinite well fed compatible with don't starve update?
+* All in one versions for torches and glowsticks with ui select? (and maybe every furniture item? Sounds like too much work imo.)
 
-Mod Compatibility Features. Won't implement till everything else is done. (will require max stacks plus (maybe))
-1. Any potions or flasks stacked to 30 won't be consumed. For general mod compatibility.
-2. Any torches, glowsticks, ammo, arrows, consumable weapons will be infinite at 3996.
-3. Soltions at 999.
+Mod Compatibility Features. Won't implement till everything else is done.
+* Infinite version of their buffs, ammo, consumables, etc.
 
 Features that won't be included:
-1. No Traveling and skeleton merchants.
-2. No plantera bulb locator.
-3. No jungle temple locator.
-4. No loot magnet.
-5. No craftable deamon/crimson alter. (use magic storage instead)
-6. No extra builder accessories? Not too op, might be convinced include.
-7. No unlimited mana accessory. Super op.
+* No permanent Traveling and skeleton merchants.
+* No plantera bulb locator.
+* No jungle temple locator.
+* No loot magnet.
+* No craftable deamon/crimson alter. (use magic storage instead)
+* No extra builder accessories? Not too op, might be convinced include.
+* No unlimited mana accessory. Super op.
+* No upgraded drill mount. Might include since it's end game.
 
 Compatibility:
 Overrides Player.HasUnityPotion and Player.TakeUnityPotion

@@ -2,8 +2,12 @@
 using System;
 using System.Collections.Generic;
 using Terraria;
+using Terraria.Audio;
 using Terraria.GameContent.Creative;
+using Terraria.GameInput;
 using Terraria.ID;
+using Terraria.Localization;
+using Terraria.Map;
 using Terraria.ModLoader;
 
 namespace PhoenixsQOLAdditions.Content.Items.Buffs
@@ -44,6 +48,11 @@ namespace PhoenixsQOLAdditions.Content.Items.Buffs
 			Item.consumable = false;
 			Item.value = 0;
 			Item.rare = ItemRarityID.Purple;
+		}
+
+		public override void ModifyResearchSorting(ref ContentSamples.CreativeHelper.ItemGroup itemGroup)
+		{
+			itemGroup = ContentSamples.CreativeHelper.ItemGroup.BuffPotion;
 		}
 
 		public sealed override void UpdateInventory(Player player)
