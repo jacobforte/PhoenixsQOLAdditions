@@ -36,6 +36,7 @@ Mods: {
 			InfiniteCake: 20% increased movement and mining speed while in your inventory
 			InfiniteCampfire: Life regen is slightly increased while in your inventory
 			InfiniteCombatBuffs: Thats a lot of damage
+			InfiniteConsumable: "{0}\nNot Consumable"
 			InfiniteCrystalBall: Magic powers are increased while in your inventory
 			InfiniteDamageBuffs: "Combines the effects of Inferno, Rage, Summoning, Thorns, Titan, and Wrath\nToggle Inferno visual using the toggle menu"
 			InfiniteDangerBuffs: "Combines the effects of Dangersense and Hunter"
@@ -58,7 +59,6 @@ Mods: {
 			InfiniteSunflower: "Movement speed increased and monster spawn rate reduced while in your inventory\nToggle reduced spawn rate using the toggle menu"
 			InfiniteTeleportationPotion: Use to teleport to a random location in the world
 			InfiniteTipsy: "Minor improvements to melee stats while in your inventory\n\"You're used to it\""
-			InfiniteTorch: "{0}\nNot Consumable"
 			InfiniteTravelBuffs: "Use to teleport to a random location in the world\nUse the configured hotkeys to teleport to your spawn point and back"
 			InfiniteWaterCandle: "Increased monster spawn rate while in your inventory\nToggle effect using the toggle menu"
 			InfiniteWormholePotion: Use your map to teleport to other player while in your inventory

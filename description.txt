@@ -7,9 +7,9 @@ Current features:
 * All potentially undesireable effects, such as battle potion or inferno's visual effect can be toggled on and off.
 * Tipsy only reduces defense when holding a melee class weapon. defense loss can be turned off entirely in the config menu.
 * Toggle menu for quickly enableing disabling certain effects, such as battler and peace potions.
+* Infinite versions of all torches and glowsticks.
 
 Planned features:
-* Infinite versions of all torches and glowsticks.
 * Infinite Healing and mana potions.
 * Infinite versions of flasks.
 * Infinite versions of all ammo, arrows, consumable weapons, solutions, bombs, rope, stink, love, gender change, red potion. (do we need infinite food?)
