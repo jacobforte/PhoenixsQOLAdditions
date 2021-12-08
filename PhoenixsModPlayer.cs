@@ -1,11 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using PhoenixsQOLAdditions.Content.Items.Buffs;
-using PhoenixsQOLAdditions.UIElements;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Terraria;
 using Terraria.Audio;
 using Terraria.GameInput;
@@ -17,7 +11,7 @@ namespace PhoenixsQOLAdditions
 	public class PhoenixsModPlayer : ModPlayer
 	{
 		private Vector2? ReturnLocation;
-
+		
 		public override void ProcessTriggers(TriggersSet triggersSet)
 		{
 			if (PhoenixsQOLAdditions.QuickRecallKeybind.JustPressed && (Player.HasItem(ModContent.ItemType<InfiniteRecallPotion>()) || Player.HasItem(ModContent.ItemType<InfiniteReturnPotion>()) || Player.HasItem(ModContent.ItemType<InfiniteTravelBuffs>()) || Player.HasItem(ModContent.ItemType<InfiniteBuffs>())))

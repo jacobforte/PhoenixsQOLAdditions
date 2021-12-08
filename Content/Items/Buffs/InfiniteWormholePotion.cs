@@ -1,12 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.Audio;
-using Terraria.GameInput;
+﻿using Terraria;
 using Terraria.ID;
-using Terraria.Localization;
-using Terraria.Map;
-using Terraria.ModLoader;
 
 namespace PhoenixsQOLAdditions.Content.Items.Buffs
 {

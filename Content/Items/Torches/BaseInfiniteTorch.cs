@@ -1,9 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Terraria;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
@@ -16,7 +11,8 @@ namespace PhoenixsQOLAdditions.Content.Items.Torches
 		protected abstract int TorchType { get; }
 		protected abstract int TorchItemType { get; }
 		protected abstract int TorchDustType { get; }
-
+		public abstract override void AutoLightSelect(ref bool dryTorch, ref bool wetTorch, ref bool glowstick);
+		
 		public sealed override void SetStaticDefaults()
 		{
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
@@ -45,12 +41,11 @@ namespace PhoenixsQOLAdditions.Content.Items.Torches
 
 		public override void HoldItem(Player player)
 		{
-			if (Main.rand.Next(player.itemAnimation > 0 ? 40 : 80) == 0 && TorchDustType != -1)
+			if (Main.rand.Next(player.itemAnimation > 0 ? 40 : 80) == 0)
 			{
-				Dust.CloneDust(TorchDustType);
+				Dust.NewDust(new Vector2(player.itemLocation.X + 16f * player.direction, player.itemLocation.Y - 14f * player.gravDir), 0, 0, TorchDustType);
 			}
 
-			// Createlight at the torch's approximate position, when the item is held.
 			Vector2 position = player.RotatedRelativePoint(new Vector2(player.itemLocation.X + 12f * player.direction + player.velocity.X, player.itemLocation.Y - 14f + player.velocity.Y), true);
 
 			Lighting.AddLight(position, TorchType);

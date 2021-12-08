@@ -18,7 +18,7 @@ namespace PhoenixsQOLAdditions
 
 		public static bool ShowToggleMenu { get; set; } = false;
 		internal static UserInterface ToggleMenuInterface { get; private set; }
-
+		
 		//Keybindings
 		public static ModKeybind QuickRecallKeybind { get; set; }
 		public static ModKeybind QuickReturnKeybind { get; set; }
@@ -106,7 +106,7 @@ namespace PhoenixsQOLAdditions
 			return string.Format(translations[$"Mods.PhoenixsQOLAdditions.{category}.{key}"].GetTranslation(Language.ActiveCulture), args);
 		}
 
-		private bool HasUnityPotionOverride(On.Terraria.Player.orig_HasUnityPotion orig, Player player)
+		private static bool HasUnityPotionOverride(On.Terraria.Player.orig_HasUnityPotion orig, Player player)
 		{
 			if (player.HasItem(ModContent.ItemType<InfiniteWormholePotion>()) || player.HasItem(ModContent.ItemType<InfiniteTravelBuffs>()) || player.HasItem(ModContent.ItemType<InfiniteBuffs>()))
 			{
@@ -115,7 +115,7 @@ namespace PhoenixsQOLAdditions
 			return orig(player);
 		}
 
-		private void TakeUnityPotionOverride(On.Terraria.Player.orig_TakeUnityPotion orig, Player player)
+		private static void TakeUnityPotionOverride(On.Terraria.Player.orig_TakeUnityPotion orig, Player player)
 		{
 			if (player.HasItem(ModContent.ItemType<InfiniteWormholePotion>()) || player.HasItem(ModContent.ItemType<InfiniteTravelBuffs>()) || player.HasItem(ModContent.ItemType<InfiniteBuffs>()))
 			{
