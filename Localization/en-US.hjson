@@ -1,5 +1,8 @@
 Mods: {
 	PhoenixsQOLAdditions: {
+		DisplayName: {
+			Infinite: "Infinite {0}"
+		}
 		Config: {
 			AutoSave: This will automatically save when using the Toggle Menu.
 			BattlerToggle: Battler

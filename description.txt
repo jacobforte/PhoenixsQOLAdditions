@@ -8,10 +8,10 @@ Current features:
 * Tipsy only reduces defense when holding a melee class weapon. defense loss can be turned off entirely in the config menu.
 * Infinite versions of all torches and glowsticks.
 * Infinite Healing and mana potions.
+* Infinite versions of flasks. (Only last flask in inventory gets applied)
 
 Planned features:
-* Infinite versions of flasks.
-* Infinite versions of all ammo, arrows, consumable weapons, solutions, bombs, rope, stink, love, gender change, red potion. (do we need infinite food?)
+* Infinite versions of all ammo, arrows, consumable weapons, solutions, bombs, rope, stink, love, gender change.
 * Auto builders. Thin house, upsidedown house, helevator, pool builder, platform builder, rail builder.
 * Baitless fishing rods.
 * Auto-apply buffs from piggybank/safe/defenders forge
@@ -20,8 +20,8 @@ Planned features:
 * Improves wrench tool, combines all wrenches with ui select. Uses no wire, has ui wire select
 * Upgraded grand design uses no actuators or wires.
 * Unlimited bucket and sponge
-* Make infinite well fed compatible with don't starve update?
-* All in one versions for torches and glowsticks with ui select? (and maybe every furniture item? Sounds like too much work imo.)
+* Make infinite well fed compatible with don't starve update? Probably not.
+* All in one versions for torches and glowsticks with ui select? Probably Not. (and maybe every furniture item? Sounds like too much work imo.)
 
 Mod Compatibility Features. Won't implement till everything else is done.
 * Infinite version of their buffs, ammo, consumables, etc.
@@ -35,6 +35,7 @@ Features that won't be included:
 * No extra builder accessories? Not too op, might be convinced include.
 * No unlimited mana accessory. Super op.
 * No upgraded drill mount. Might include since it's end game.
+* No infinite food items.
 
 Compatibility:
 Overrides Player.HasUnityPotion, Player.TakeUnityPotion, Player.ApplyPotionDelay
