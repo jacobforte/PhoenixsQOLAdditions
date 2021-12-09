@@ -1,3 +1,4 @@
+using PhoenixsQOLAdditions.Content.Items.AmmoWeapons;
 using PhoenixsQOLAdditions.Content.Items.Buffs;
 using PhoenixsQOLAdditions.Content.Items.HealingMana;
 using PhoenixsQOLAdditions.UIElements;
@@ -46,6 +47,7 @@ namespace PhoenixsQOLAdditions
 			On.Terraria.Player.HasUnityPotion += (orig, player) => HasUnityPotionOverride(orig, player);
 			On.Terraria.Player.TakeUnityPotion += (orig, player) => TakeUnityPotionOverride(orig, player);
 			On.Terraria.Player.ApplyPotionDelay += (orig, player, item) => ApplyPotionDelay(orig, player, item);
+			LoadLauncherAmmoProjectiles();
 
 			if (!Main.dedServ)
 			{
@@ -58,7 +60,9 @@ namespace PhoenixsQOLAdditions
 
 		public override void Unload()
 		{
+			UnloadLauncherAmmoProjectiles();
 			Instance = null;
+			translations = null;
 			QuickRecallKeybind = null;
 			QuickReturnKeybind = null;
 			ToggleMenuKeybind = null;
@@ -141,5 +145,124 @@ namespace PhoenixsQOLAdditions
 				orig(player, item);
 			}
 		}
+
+		private static void LoadLauncherAmmoProjectiles()
+		{
+			foreach (var rocket in SpecificLauncherAmmoProjectileMatches)
+			{
+				var launcher = AmmoID.Sets.SpecificLauncherAmmoProjectileMatches.Where(etc => etc.Key == rocket.Key);
+				if (launcher.Any())
+				{
+					foreach (var ammo in rocket.Value)
+					{
+						launcher.First().Value.Add(ammo.Key, ammo.Value);
+					}
+				}
+			}
+		}
+
+		private static void UnloadLauncherAmmoProjectiles()
+		{
+			foreach (var rocket in SpecificLauncherAmmoProjectileMatches)
+			{
+				var launcher = AmmoID.Sets.SpecificLauncherAmmoProjectileMatches.Where(etc => etc.Key == rocket.Key);
+				if (launcher.Any())
+				{
+					foreach (var ammo in rocket.Value)
+					{
+						launcher.First().Value.Remove(ammo.Key);
+					}
+				}
+			}
+		}
+
+		private static Dictionary<int, Dictionary<int, int>> SpecificLauncherAmmoProjectileMatches = new()
+		{
+			{
+				759,
+				new Dictionary<int, int> {
+					{ ModContent.ItemType<InfiniteRocketI>(), 134 },
+					{ ModContent.ItemType<InfiniteRocketII>(), 137 },
+					{ ModContent.ItemType<InfiniteRocketIII>(), 140 },
+					{ ModContent.ItemType<InfiniteRocketIV>(), 143 },
+					{ ModContent.ItemType<InfiniteClusterRocketI>(), 776 },
+					{ ModContent.ItemType<InfiniteClusterRocketII>(), 780 },
+					{ ModContent.ItemType<InfiniteMiniNukeI>(), 793 },
+					{ ModContent.ItemType<InfiniteMiniNukeII>(), 796 },
+					{ ModContent.ItemType<InfiniteDryRocket>(), 799 },
+					{ ModContent.ItemType<InfiniteWetRocket>(), 784 },
+					{ ModContent.ItemType<InfiniteLavaRocket>(), 787 },
+					{ ModContent.ItemType<InfiniteHoneyRocket>(), 790 }
+				}
+			},
+			{
+				758,
+				new Dictionary<int, int> {
+					{ ModContent.ItemType<InfiniteRocketI>(), 133 },
+					{ ModContent.ItemType<InfiniteRocketII>(), 136 },
+					{ ModContent.ItemType<InfiniteRocketIII>(), 139 },
+					{ ModContent.ItemType<InfiniteRocketIV>(), 142 },
+					{ ModContent.ItemType<InfiniteClusterRocketI>(), 777 },
+					{ ModContent.ItemType<InfiniteClusterRocketII>(), 781 },
+					{ ModContent.ItemType<InfiniteMiniNukeI>(), 794 },
+					{ ModContent.ItemType<InfiniteMiniNukeII>(), 797 },
+					{ ModContent.ItemType<InfiniteDryRocket>(), 800 },
+					{ ModContent.ItemType<InfiniteWetRocket>(), 785 },
+					{ ModContent.ItemType<InfiniteLavaRocket>(), 788 },
+					{ ModContent.ItemType<InfiniteHoneyRocket>(), 791 }
+				}
+			},
+			{
+				760,
+				new Dictionary<int, int> {
+					{ ModContent.ItemType<InfiniteRocketI>(), 135 },
+					{ ModContent.ItemType<InfiniteRocketII>(), 138 },
+					{ ModContent.ItemType<InfiniteRocketIII>(), 141 },
+					{ ModContent.ItemType<InfiniteRocketIV>(), 144 },
+					{ ModContent.ItemType<InfiniteClusterRocketI>(), 778 },
+					{ ModContent.ItemType<InfiniteClusterRocketII>(), 782 },
+					{ ModContent.ItemType<InfiniteMiniNukeI>(), 795 },
+					{ ModContent.ItemType<InfiniteMiniNukeII>(), 798 },
+					{ ModContent.ItemType<InfiniteDryRocket>(), 801 },
+					{ ModContent.ItemType<InfiniteWetRocket>(), 786 },
+					{ ModContent.ItemType<InfiniteLavaRocket>(), 789 },
+					{ ModContent.ItemType<InfiniteHoneyRocket>(), 792 }
+				}
+			},
+			{
+				1946,
+				new Dictionary<int, int> {
+					{ ModContent.ItemType<InfiniteRocketI>(), 338 },
+					{ ModContent.ItemType<InfiniteRocketII>(), 339 },
+					{ ModContent.ItemType<InfiniteRocketIII>(), 340 },
+					{ ModContent.ItemType<InfiniteRocketIV>(), 341 },
+					{ ModContent.ItemType<InfiniteClusterRocketI>(), 803 },
+					{ ModContent.ItemType<InfiniteClusterRocketII>(), 804 },
+					{ ModContent.ItemType<InfiniteMiniNukeI>(), 808 },
+					{ ModContent.ItemType<InfiniteMiniNukeII>(), 809 },
+					{ ModContent.ItemType<InfiniteDryRocket>(), 810 },
+					{ ModContent.ItemType<InfiniteWetRocket>(), 805 },
+					{ ModContent.ItemType<InfiniteLavaRocket>(), 806 },
+					{ ModContent.ItemType<InfiniteHoneyRocket>(), 807 }
+				}
+			},
+			{
+				3930,
+				new Dictionary<int, int> {
+					{ ModContent.ItemType<InfiniteRocketI>(), 715 },
+					{ ModContent.ItemType<InfiniteRocketII>(), 716 },
+					{ ModContent.ItemType<InfiniteRocketIII>(), 717 },
+					{ ModContent.ItemType<InfiniteRocketIV>(), 718 },
+					{ ModContent.ItemType<InfiniteClusterRocketI>(), 717 },
+					{ ModContent.ItemType<InfiniteClusterRocketII>(), 718 },
+					{ ModContent.ItemType<InfiniteMiniNukeI>(), 717 },
+					{ ModContent.ItemType<InfiniteMiniNukeII>(), 718 },
+					{ ModContent.ItemType<InfiniteDryRocket>(), 717 },
+					{ ModContent.ItemType<InfiniteWetRocket>(), 717 },
+					{ ModContent.ItemType<InfiniteLavaRocket>(), 717 },
+					{ ModContent.ItemType<InfiniteHoneyRocket>(), 717 }
+				}
+			}
+		};
 	}
 }
