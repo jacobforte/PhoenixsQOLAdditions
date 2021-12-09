@@ -4,13 +4,12 @@ Current features:
 * infinite teleportation, wormhole, recall, and return potions.
 * Combination crafting to put all of the above into a single item.
 * Hotkeys to quickly use recall and return.
-* All potentially undesireable effects, such as battle potion or inferno's visual effect can be toggled on and off.
+* All potentially undesireable effects, such as battle potion or inferno's visual effect can be toggled on and off with a UI.
 * Tipsy only reduces defense when holding a melee class weapon. defense loss can be turned off entirely in the config menu.
-* Toggle menu for quickly enableing disabling certain effects, such as battler and peace potions.
 * Infinite versions of all torches and glowsticks.
+* Infinite Healing and mana potions.
 
 Planned features:
-* Infinite Healing and mana potions.
 * Infinite versions of flasks.
 * Infinite versions of all ammo, arrows, consumable weapons, solutions, bombs, rope, stink, love, gender change, red potion. (do we need infinite food?)
 * Auto builders. Thin house, upsidedown house, helevator, pool builder, platform builder, rail builder.
@@ -38,4 +37,4 @@ Features that won't be included:
 * No upgraded drill mount. Might include since it's end game.
 
 Compatibility:
-Overrides Player.HasUnityPotion and Player.TakeUnityPotion
+Overrides Player.HasUnityPotion, Player.TakeUnityPotion, Player.ApplyPotionDelay

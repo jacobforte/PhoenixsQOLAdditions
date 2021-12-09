@@ -24,11 +24,6 @@ namespace PhoenixsQOLAdditions.Content.Items.Glowsticks
 			Tooltip.SetDefault(PhoenixsQOLAdditions.GetText("ItemTooltip", "InfiniteConsumable", baseTooltipString));
 		}
 
-		public sealed override void AutoLightSelect(ref bool dryTorch, ref bool wetTorch, ref bool glowstick)
-		{
-			glowstick = true;
-		}
-
 		public override void SetDefaults()
 		{
 			Item.CloneDefaults(GlowstickItemType);
@@ -36,6 +31,11 @@ namespace PhoenixsQOLAdditions.Content.Items.Glowsticks
 			Item.consumable = false;
 			Item.value = 0;
 			Item.rare = ItemRarityID.Green;
+		}
+
+		public sealed override void AutoLightSelect(ref bool dryTorch, ref bool wetTorch, ref bool glowstick)
+		{
+			glowstick = true;
 		}
 
 		public override void ModifyResearchSorting(ref ContentSamples.CreativeHelper.ItemGroup itemGroup)

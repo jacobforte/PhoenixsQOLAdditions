@@ -1,4 +1,5 @@
 using PhoenixsQOLAdditions.Content.Items.Buffs;
+using PhoenixsQOLAdditions.Content.Items.HealingMana;
 using PhoenixsQOLAdditions.UIElements;
 using System;
 using System.Collections.Generic;
@@ -44,6 +45,7 @@ namespace PhoenixsQOLAdditions
 
 			On.Terraria.Player.HasUnityPotion += (orig, player) => HasUnityPotionOverride(orig, player);
 			On.Terraria.Player.TakeUnityPotion += (orig, player) => TakeUnityPotionOverride(orig, player);
+			On.Terraria.Player.ApplyPotionDelay += (orig, player, item) => ApplyPotionDelay(orig, player, item);
 
 			if (!Main.dedServ)
 			{
@@ -122,6 +124,22 @@ namespace PhoenixsQOLAdditions
 				return;
 			}
 			orig(player);
+		}
+
+		private static void ApplyPotionDelay(On.Terraria.Player.orig_ApplyPotionDelay orig, Player player, Item item)
+		{
+			if (item.type == ModContent.ItemType<InfiniteRestorationPotion>())
+			{
+				player.AddBuff(21, player.restorationDelayTime);
+			}
+			else if (item.type == ModContent.ItemType<InfiniteMushroom>())
+			{
+				player.AddBuff(21, player.mushroomDelayTime);
+			}
+			else
+			{
+				orig(player, item);
+			}
 		}
 	}
 }
