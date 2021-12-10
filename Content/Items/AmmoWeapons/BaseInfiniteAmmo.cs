@@ -31,6 +31,10 @@ namespace PhoenixsQOLAdditions.Content.Items.AmmoWeapons
 			Item.consumable = false;
 			Item.value = 0;
 			Item.rare = ItemRarityID.Green;
+			Item.notAmmo = false;
+			Item.createTile = -1;
+			Item.buffType = 0;
+			Item.buffTime = 0;
 		}
 
 		public override void ModifyResearchSorting(ref ContentSamples.CreativeHelper.ItemGroup itemGroup)
