@@ -5,16 +5,14 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Utilities;
 
-namespace PhoenixsQOLAdditions.Content.Items.AmmoWeapons
+namespace PhoenixsQOLAdditions.Content.Items.Rope
 {
-	public abstract class BaseInfiniteAmmo : ModItem
+	public abstract class BaseInfiniteRope : ModItem
 	{
 		protected abstract int BaseItemType { get; }
 
 		public sealed override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault(PhoenixsQOLAdditions.GetText("DisplayName", "Infinite", Lang.GetItemName(BaseItemType)));
-
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 			var baseTooltip = Lang.GetTooltip(BaseItemType);
 			List<string> baseTooltipList = new();
@@ -33,20 +31,11 @@ namespace PhoenixsQOLAdditions.Content.Items.AmmoWeapons
 			Item.consumable = false;
 			Item.value = 0;
 			Item.rare = ItemRarityID.Green;
-			Item.notAmmo = false;
-			Item.createTile = -1;
-			Item.buffType = 0;
-			Item.buffTime = 0;
-		}
-
-		public override bool? PrefixChance(int pre, UnifiedRandom rand)
-		{
-			return false;
 		}
 
 		public override void ModifyResearchSorting(ref ContentSamples.CreativeHelper.ItemGroup itemGroup)
 		{
-			itemGroup = ContentSamples.CreativeHelper.ItemGroup.Ammo;
+			itemGroup = ContentSamples.CreativeHelper.ItemGroup.Rope;
 		}
 
 		public override void AddRecipes()

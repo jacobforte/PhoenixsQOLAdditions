@@ -9,19 +9,17 @@ Current features:
 * Infinite versions of all torches and glowsticks.
 * Infinite Healing and mana potions.
 * Infinite versions of flasks. (Only last flask in inventory gets applied)
+* Infinite versions of all ammo, arrows, solutions, thrown weapons, bombs, rope, stink, love, gender change.
 
 Planned features:
-* Infinite versions of all ammo, arrows, consumable weapons, solutions, bombs, rope, stink, love, gender change.
 * Auto builders. Thin house, upsidedown house, helevator, pool builder, platform builder, rail builder.
-* Baitless fishing rods.
+* Baitless fishing rods. A rod that combines all fishing accessories into one.
 * Auto-apply buffs from piggybank/safe/defenders forge
 * Mobile piggybank/safe/defenders forge/merchant
 * Improved actuation rod, consumes no actuators
 * Improves wrench tool, combines all wrenches with ui select. Uses no wire, has ui wire select
 * Upgraded grand design uses no actuators or wires.
 * Unlimited bucket and sponge
-* Make infinite well fed compatible with don't starve update? Probably not.
-* All in one versions for torches and glowsticks with ui select? Probably Not. (and maybe every furniture item? Sounds like too much work imo.)
 
 Mod Compatibility Features. Won't implement till everything else is done.
 * Infinite version of their buffs, ammo, consumables, etc.
@@ -36,6 +34,7 @@ Features that won't be included:
 * No unlimited mana accessory. Super op.
 * No upgraded drill mount. Might include since it's end game.
 * No infinite food items.
+* No additional fishing rod lines for completing angler quests.
 
 Compatibility:
 Overrides Player.HasUnityPotion, Player.TakeUnityPotion, Player.ApplyPotionDelay

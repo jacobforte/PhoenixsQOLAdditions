@@ -9,9 +9,14 @@ namespace PhoenixsQOLAdditions.Content.Items.Buffs
 	{
 		protected abstract int Rarity { get; }
 		protected abstract string TooltipString { get; }
+		protected virtual string DisplayNameString { get; }
 
 		public sealed override void SetStaticDefaults()
 		{
+			if (!string.IsNullOrEmpty(DisplayNameString))
+			{
+				DisplayName.SetDefault(DisplayNameString);
+			}
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 			Tooltip.SetDefault(TooltipString);
 		}

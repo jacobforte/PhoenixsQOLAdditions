@@ -2,9 +2,9 @@
 
 namespace PhoenixsQOLAdditions.Content.Items.AmmoWeapons
 {
-	public class InfiniteBone : BaseInfiniteAmmo
+	public class InfiniteSpikyBall : BaseInfiniteAmmo
 	{
-		protected override int BaseItemType => ItemID.Bone;
+		protected override int BaseItemType => ItemID.SpikyBall;
 
 		public override void ModifyResearchSorting(ref ContentSamples.CreativeHelper.ItemGroup itemGroup)
 		{

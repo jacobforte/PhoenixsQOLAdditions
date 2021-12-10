@@ -2,13 +2,13 @@
 
 namespace PhoenixsQOLAdditions.Content.Items.AmmoWeapons
 {
-	public class InfiniteBone : BaseInfiniteAmmo
+	public class InfiniteDynamite : BaseInfiniteAmmo
 	{
-		protected override int BaseItemType => ItemID.Bone;
+		protected override int BaseItemType => ItemID.Dynamite;
 
 		public override void ModifyResearchSorting(ref ContentSamples.CreativeHelper.ItemGroup itemGroup)
 		{
-			itemGroup = ContentSamples.CreativeHelper.ItemGroup.ConsumableThatDamages;
+			itemGroup = ContentSamples.CreativeHelper.ItemGroup.Bombs;
 		}
 	}
 }

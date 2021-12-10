@@ -39,7 +39,7 @@ Mods: {
 			InfiniteCake: 20% increased movement and mining speed while in your inventory
 			InfiniteCampfire: Life regen is slightly increased while in your inventory
 			InfiniteCombatBuffs: Thats a lot of damage
-			InfiniteConsumable: "{0}\nNot Consumable"
+			InfiniteConsumable: "Not Consumable\n{0}"
 			InfiniteCrystalBall: Magic powers are increased while in your inventory
 			InfiniteDamageBuffs: "Combines the effects of Inferno, Rage, Summoning, Thorns, Titan, and Wrath\nToggle Inferno visual using the toggle menu"
 			InfiniteDangerBuffs: "Combines the effects of Dangersense and Hunter"
